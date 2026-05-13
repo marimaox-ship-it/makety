@@ -1,0 +1,1129 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>GeoPro | Инжиниринг премиум-класса</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0A0C10;
+            color: #E8ECF2;
+            line-height: 1.5;
+            scroll-behavior: smooth;
+        }
+
+        .container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 32px;
+        }
+
+        :root {
+            --gold: #C8A96E;
+            --gold-light: #DDBE8A;
+            --dark-bg: #0A0C10;
+            --card-bg: #12151E;
+            --border-subtle: #1F2532;
+            --text-muted: #9AA2B0;
+            --logo-yellow: #FFBA00;
+            --logo-purple: #2B294B;
+        }
+
+        .accent-gold {
+            color: var(--gold);
+        }
+
+        /* Навигация */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 28px 0;
+            border-bottom: 1px solid var(--border-subtle);
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .logo img {
+            height: 52px;
+            width: auto;
+            object-fit: contain;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 42px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #E2E8F0;
+            font-weight: 500;
+            font-size: 16px;
+            transition: color 0.2s;
+        }
+
+        .nav-links a:hover {
+            color: var(--gold);
+        }
+
+        .contact-buttons {
+            display: flex;
+            gap: 12px;
+        }
+
+        .btn-call {
+            background: var(--logo-yellow);
+            border: none;
+            padding: 10px 24px;
+            border-radius: 40px;
+            font-weight: 700;
+            color: #1A192E;
+            cursor: pointer;
+            font-size: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            transition: all 0.2s;
+            text-decoration: none;
+        }
+
+        .btn-call:hover {
+            background: #FFCE44;
+            transform: translateY(-2px);
+        }
+
+        .btn-messenger {
+            background: transparent;
+            border: 1px solid var(--gold);
+            padding: 10px 20px;
+            border-radius: 40px;
+            font-weight: 500;
+            color: var(--gold);
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            transition: 0.2s;
+            text-decoration: none;
+        }
+
+        .btn-messenger:hover {
+            background: var(--gold);
+            color: #0A0C10;
+        }
+
+        /* Hero */
+        .hero {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+            gap: 60px;
+            padding: 60px 0 80px;
+        }
+
+        .hero-content {
+            flex: 1.2;
+        }
+
+        .hero-badge {
+            font-size: 13px;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: var(--gold);
+            margin-bottom: 20px;
+        }
+
+        .hero h1 {
+            font-size: 54px;
+            font-weight: 700;
+            line-height: 1.2;
+            margin-bottom: 24px;
+        }
+
+        .hero h1 span {
+            color: var(--gold);
+        }
+
+        .hero p {
+            font-size: 18px;
+            color: var(--text-muted);
+            max-width: 550px;
+            margin-bottom: 40px;
+        }
+
+        .hero-stats {
+            display: flex;
+            gap: 48px;
+            margin-top: 32px;
+        }
+
+        .stat-number {
+            font-size: 38px;
+            font-weight: 800;
+            color: var(--gold);
+        }
+
+        .hero-image {
+            flex: 0.9;
+            background: linear-gradient(145deg, #141A26, #0D1018);
+            border-radius: 32px;
+            padding: 40px 30px;
+            text-align: center;
+            border: 1px solid rgba(200, 169, 110, 0.25);
+            box-shadow: 0 20px 35px -12px rgba(0,0,0,0.5);
+        }
+
+        .hero-image i {
+            font-size: 70px;
+            color: var(--gold);
+            margin-bottom: 20px;
+        }
+
+        .section-title {
+            font-size: 38px;
+            font-weight: 700;
+            margin-bottom: 16px;
+        }
+
+        .section-sub {
+            font-size: 18px;
+            color: var(--text-muted);
+            margin-bottom: 56px;
+        }
+
+        /* Услуги */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 32px;
+            margin: 56px 0 80px;
+        }
+
+        .service-card {
+            background: var(--card-bg);
+            border-radius: 28px;
+            padding: 36px 28px;
+            border: 1px solid var(--border-subtle);
+            transition: all 0.3s ease;
+        }
+
+        .service-card:hover {
+            transform: translateY(-6px);
+            border-color: var(--gold);
+            box-shadow: 0 20px 30px -10px rgba(0,0,0,0.4);
+        }
+
+        .service-icon {
+            font-size: 44px;
+            color: var(--gold);
+            margin-bottom: 28px;
+        }
+
+        .service-card h3 {
+            font-size: 24px;
+            margin-bottom: 14px;
+        }
+
+        .service-card p {
+            color: #ADB5C4;
+        }
+
+        /* Проекты (портфолио) */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 32px;
+            margin: 56px 0 80px;
+        }
+
+        .project-card {
+            background: var(--card-bg);
+            border-radius: 24px;
+            overflow: hidden;
+            border: 1px solid var(--border-subtle);
+            transition: transform 0.3s;
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--gold);
+        }
+
+        .project-image {
+            height: 220px;
+            background: linear-gradient(135deg, #1A1F2A, #0F1117);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+
+        .project-image i {
+            font-size: 64px;
+            color: var(--gold);
+            opacity: 0.5;
+        }
+
+        .project-tag {
+            position: absolute;
+            top: 16px;
+            right: 16px;
+            background: var(--gold);
+            color: #0A0C10;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 600;
+        }
+
+        .project-info {
+            padding: 24px;
+        }
+
+        .project-info h3 {
+            font-size: 20px;
+            margin-bottom: 8px;
+        }
+
+        .project-meta {
+            display: flex;
+            gap: 16px;
+            margin-top: 16px;
+            font-size: 14px;
+            color: var(--text-muted);
+        }
+
+        .project-meta i {
+            margin-right: 6px;
+            color: var(--gold);
+        }
+
+        /* 5 причин */
+        .reasons-block {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 48px;
+            background: #0D111A;
+            border-radius: 44px;
+            padding: 64px 48px;
+            margin: 60px 0;
+            align-items: center;
+        }
+
+        .reasons-text {
+            flex: 1;
+        }
+
+        .reasons-text h2 {
+            font-size: 34px;
+            margin-bottom: 24px;
+        }
+
+        .reasons-list {
+            flex: 1;
+            list-style: none;
+        }
+
+        .reasons-list li {
+            display: flex;
+            gap: 18px;
+            margin-bottom: 28px;
+            font-size: 17px;
+            font-weight: 500;
+        }
+
+        .reasons-list li i {
+            color: var(--gold);
+            font-size: 22px;
+        }
+
+        /* Статистика с разбивкой */
+        .projects-stats {
+            text-align: center;
+            background: linear-gradient(120deg, #11161F, #0A0E16);
+            border-radius: 40px;
+            padding: 56px 32px;
+            margin: 60px 0;
+        }
+
+        .big-number {
+            font-size: 58px;
+            font-weight: 800;
+            color: var(--gold);
+            letter-spacing: -1px;
+        }
+
+        .stats-breakdown {
+            display: flex;
+            justify-content: center;
+            gap: 48px;
+            margin-top: 32px;
+            flex-wrap: wrap;
+        }
+
+        .stat-item {
+            text-align: center;
+        }
+
+        .stat-number-small {
+            font-size: 28px;
+            font-weight: 700;
+            color: var(--gold);
+        }
+
+        /* География (карта) */
+        .map-container {
+            background: var(--card-bg);
+            border-radius: 32px;
+            padding: 32px;
+            margin: 60px 0;
+            border: 1px solid var(--border-subtle);
+        }
+
+        .map-title {
+            text-align: center;
+            margin-bottom: 32px;
+        }
+
+        .map-svg {
+            background: #0D111A;
+            border-radius: 24px;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .map-markers {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            margin-top: 24px;
+            flex-wrap: wrap;
+        }
+
+        .marker {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--text-muted);
+            font-size: 14px;
+        }
+
+        .marker i {
+            color: var(--gold);
+            font-size: 18px;
+        }
+
+        /* Калькулятор */
+        .calculator {
+            background: var(--card-bg);
+            border-radius: 32px;
+            padding: 48px;
+            margin: 60px 0;
+            border: 1px solid var(--border-subtle);
+        }
+
+        .calc-slider {
+            margin: 32px 0;
+        }
+
+        .calc-slider label {
+            display: block;
+            margin-bottom: 12px;
+            font-weight: 500;
+        }
+
+        input[type="range"] {
+            width: 100%;
+            height: 4px;
+            background: var(--border-subtle);
+            border-radius: 2px;
+            -webkit-appearance: none;
+        }
+
+        input[type="range"]:focus {
+            outline: none;
+        }
+
+        input[type="range"]::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            width: 18px;
+            height: 18px;
+            border-radius: 50%;
+            background: var(--gold);
+            cursor: pointer;
+        }
+
+        .calc-value {
+            font-size: 32px;
+            font-weight: 700;
+            color: var(--gold);
+            margin-top: 8px;
+        }
+
+        .calc-type {
+            margin: 24px 0;
+        }
+
+        .calc-type select {
+            width: 100%;
+            padding: 14px;
+            background: var(--dark-bg);
+            border: 1px solid var(--border-subtle);
+            border-radius: 12px;
+            color: white;
+            font-family: inherit;
+            cursor: pointer;
+        }
+
+        .calc-result {
+            margin-top: 32px;
+            padding: 24px;
+            background: var(--dark-bg);
+            border-radius: 20px;
+            text-align: center;
+        }
+
+        .calc-result .price {
+            font-size: 36px;
+            font-weight: 800;
+            color: var(--gold);
+        }
+
+        /* Сравнительная таблица */
+        .compare-table {
+            background: var(--card-bg);
+            border-radius: 32px;
+            overflow: hidden;
+            margin: 60px 0;
+            border: 1px solid var(--border-subtle);
+        }
+
+        .compare-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            border-bottom: 1px solid var(--border-subtle);
+        }
+
+        .compare-row.header {
+            background: var(--dark-bg);
+            font-weight: 700;
+        }
+
+        .compare-cell {
+            padding: 20px 24px;
+        }
+
+        .compare-cell i.fa-check {
+            color: #4CAF50;
+        }
+
+        .compare-cell i.fa-times {
+            color: #f44336;
+        }
+
+        /* Этапы работ */
+        .stages-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 24px;
+            margin: 56px 0;
+        }
+
+        .stage-item {
+            text-align: center;
+            padding: 32px 20px;
+            background: var(--card-bg);
+            border-radius: 24px;
+            border: 1px solid var(--border-subtle);
+        }
+
+        .stage-number {
+            width: 48px;
+            height: 48px;
+            background: var(--gold);
+            color: #0A0C10;
+            border-radius: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 800;
+            font-size: 20px;
+            margin: 0 auto 20px;
+        }
+
+        /* Документы и сертификаты */
+        .docs-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 32px;
+            margin: 56px 0;
+        }
+
+        .doc-card {
+            background: var(--card-bg);
+            padding: 32px;
+            border-radius: 24px;
+            text-align: center;
+            min-width: 180px;
+            border: 1px solid var(--border-subtle);
+        }
+
+        .doc-card i {
+            font-size: 48px;
+            color: var(--gold);
+            margin-bottom: 16px;
+        }
+
+        .doc-card h4 {
+            font-size: 16px;
+            margin-bottom: 8px;
+        }
+
+        .doc-card p {
+            font-size: 13px;
+            color: var(--text-muted);
+        }
+
+        /* Аккордеон FAQ */
+        .faq-item {
+            background: var(--card-bg);
+            border-radius: 20px;
+            margin-bottom: 16px;
+            border: 1px solid var(--border-subtle);
+        }
+
+        .faq-question {
+            padding: 20px 24px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 600;
+        }
+
+        .faq-question i {
+            transition: transform 0.3s;
+        }
+
+        .faq-answer {
+            padding: 0 24px 20px 24px;
+            color: var(--text-muted);
+            display: none;
+        }
+
+        .faq-item.active .faq-answer {
+            display: block;
+        }
+
+        .faq-item.active .faq-question i {
+            transform: rotate(180deg);
+        }
+
+        /* Отзывы */
+        .testimonials {
+            display: flex;
+            gap: 32px;
+            flex-wrap: wrap;
+            margin: 56px 0;
+        }
+
+        .testimonial {
+            background: var(--card-bg);
+            border-radius: 28px;
+            padding: 32px;
+            flex: 1;
+            border: 1px solid var(--border-subtle);
+        }
+
+        .testimonial p {
+            font-style: italic;
+            font-size: 17px;
+            margin-bottom: 24px;
+            color: #CFD6E4;
+        }
+
+        .client {
+            font-weight: 700;
+            color: var(--gold);
+        }
+
+        /* Лицензии */
+        .licenses {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 48px;
+            margin: 70px 0 50px;
+            padding: 30px 0;
+            border-top: 1px solid var(--border-subtle);
+            border-bottom: 1px solid var(--border-subtle);
+        }
+
+        .license-item {
+            font-size: 20px;
+            font-weight: 500;
+            letter-spacing: 1px;
+            color: #C0C8D8;
+        }
+
+        .license-item i {
+            color: var(--gold);
+            margin-right: 8px;
+        }
+
+        /* Контакты */
+        .contact-section {
+            background: #0F131C;
+            border-radius: 40px;
+            padding: 56px 48px;
+            margin: 60px 0;
+            text-align: center;
+        }
+
+        .contact-actions {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 24px;
+            margin: 40px 0 20px;
+        }
+
+        .contact-actions .btn-call, .contact-actions .btn-messenger {
+            padding: 14px 32px;
+            font-size: 18px;
+        }
+
+        .contact-actions .btn-call {
+            background: var(--logo-yellow);
+            color: #1A192E;
+        }
+
+        .email-link {
+            display: inline-block;
+            margin-top: 20px;
+            font-size: 18px;
+            color: var(--gold);
+            text-decoration: none;
+            border-bottom: 1px dashed var(--gold);
+        }
+
+        .btn-download {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            background: transparent;
+            border: 1px solid var(--gold);
+            padding: 14px 32px;
+            border-radius: 40px;
+            color: var(--gold);
+            text-decoration: none;
+            font-weight: 600;
+            margin-top: 20px;
+            transition: 0.2s;
+        }
+
+        .btn-download:hover {
+            background: var(--gold);
+            color: #0A0C10;
+        }
+
+        footer {
+            padding: 48px 0 32px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 40px;
+            border-top: 1px solid var(--border-subtle);
+        }
+
+        @media (max-width: 800px) {
+            .container { padding: 0 20px; }
+            .hero h1 { font-size: 38px; }
+            .navbar { flex-direction: column; }
+            .nav-links { gap: 24px; flex-wrap: wrap; justify-content: center; }
+            .contact-buttons { width: 100%; justify-content: center; }
+            .compare-row { grid-template-columns: 1fr; }
+            .compare-cell { padding: 12px 20px; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <!-- Навигация -->
+    <div class="navbar">
+        <div class="logo">
+            <img src="______.png" alt="GeoPro логотип">
+        </div>
+        <ul class="nav-links">
+            <li><a href="#">Проекты</a></li>
+            <li><a href="#">Услуги</a></li>
+            <li><a href="#">Отзывы</a></li>
+            <li><a href="#">Лицензии</a></li>
+        </ul>
+        <div class="contact-buttons">
+            <a href="tel:+74959990099" class="btn-call"><i class="fas fa-phone-alt"></i> Позвонить</a>
+            <a href="https://wa.me/74959990099" class="btn-messenger"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+            <a href="tg://resolve?domain=geopro" class="btn-messenger"><i class="fab fa-telegram"></i> Telegram</a>
+        </div>
+    </div>
+
+    <!-- Hero -->
+    <div class="hero">
+        <div class="hero-content">
+            <div class="hero-badge">ЭКСПЕРТИЗА С 2014 ГОДА</div>
+            <h1>Проектирование, <span>электролаборатория</span><br> и ремонт под ключ</h1>
+            <p>Более 10 лет комплексные услуги: от проектной документации до чистовой отделки. Один подрядчик вместо нескольких компаний.</p>
+            <div class="hero-stats">
+                <div><span class="stat-number">>15 000</span><br>проектов</div>
+                <div><span class="stat-number">10+ лет</span><br>на рынке</div>
+                <div><span class="stat-number">24/7</span><br>техподдержка</div>
+            </div>
+        </div>
+        <div class="hero-image">
+            <i class="fas fa-file-signature"></i>
+            <h3 style="margin-top: 15px; color: var(--gold);">Проектная документация</h3>
+            <p style="margin-top: 15px;">Разработка и согласование любой сложности</p>
+        </div>
+    </div>
+
+    <!-- Услуги -->
+    <div>
+        <div class="section-title">Ключевые направления</div>
+        <div class="section-sub">Комплексные инженерные решения для квартир, домов и бизнеса</div>
+        <div class="services-grid">
+            <div class="service-card"><i class="fas fa-drafting-compass service-icon"></i><h3>Проектная документация</h3><p>Разделы П, РД, согласование — соответствие ГОСТ и экспертиза.</p></div>
+            <div class="service-card"><i class="fas fa-bolt service-icon"></i><h3>Электролаборатория</h3><p>Измерения, испытания, пусконаладка электрощитовых и сетей до 1000В.</p></div>
+            <div class="service-card"><i class="fas fa-wind service-icon"></i><h3>Кондиционирование</h3><p>Проектирование VRV, чиллер-фанкойлы, сплит-системы, мультизональные решения.</p></div>
+            <div class="service-card"><i class="fas fa-paint-roller service-icon"></i><h3>Ремонт и отделка</h3><p>От дизайн-проекта до черновой и чистовой отделки «под ключ».</p></div>
+        </div>
+    </div>
+
+    <!-- Примеры проектов (новый блок) -->
+    <div>
+        <div class="section-title">Примеры наших проектов</div>
+        <div class="section-sub">Реальные объекты — реальные результаты</div>
+        <div class="projects-grid">
+            <div class="project-card">
+                <div class="project-image">
+                    <i class="fas fa-building"></i>
+                    <span class="project-tag">Коммерция</span>
+                </div>
+                <div class="project-info">
+                    <h3>Бизнес-центр «Преображенский»</h3>
+                    <p>Проектная документация + электролаборатория + вентиляция</p>
+                    <div class="project-meta">
+                        <span><i class="fas fa-calendar"></i> Срок: 4 мес</span>
+                        <span><i class="fas fa-ruler-combined"></i> Площадь: 5 200 м²</span>
+                    </div>
+                </div>
+            </div>
+            <div class="project-card">
+                <div class="project-image">
+                    <i class="fas fa-home"></i>
+                    <span class="project-tag">Коттедж</span>
+                </div>
+                <div class="project-info">
+                    <h3>Загородный дом в Можайске</h3>
+                    <p>Под ключ: проектирование, электрика, кондиционирование, отделка</p>
+                    <div class="project-meta">
+                        <span><i class="fas fa-calendar"></i> Срок: 6 мес</span>
+                        <span><i class="fas fa-ruler-combined"></i> Площадь: 380 м²</span>
+                    </div>
+                </div>
+            </div>
+            <div class="project-card">
+                <div class="project-image">
+                    <i class="fas fa-store"></i>
+                    <span class="project-tag">Ритейл</span>
+                </div>
+                <div class="project-info">
+                    <h3>ТЦ «Европейский» — реконструкция</h3>
+                    <p>Электролаборатория, замеры, пусконаладка</p>
+                    <div class="project-meta">
+                        <span><i class="fas fa-calendar"></i> Срок: 2 мес</span>
+                        <span><i class="fas fa-ruler-combined"></i> Площадь: 12 000 м²</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 5 причин -->
+    <div class="reasons-block">
+        <div class="reasons-text">
+            <h2>5 причин <span class="accent-gold">доверить инженерный проект</span> нам</h2>
+            <div style="width: 70px; height: 2px; background: var(--gold); margin-top: 8px;"></div>
+            <p style="margin-top: 28px;">Сложные инженерные системы требуют безупречного подхода. Мы гарантируем результат.</p>
+        </div>
+        <ul class="reasons-list">
+            <li><i class="fas fa-check-circle"></i> Один подрядчик на проектирование, электролабораторию и отделку</li>
+            <li><i class="fas fa-check-circle"></i> Фиксированные сроки в договоре — ответственность по KPI</li>
+            <li><i class="fas fa-check-circle"></i> Собственная аккредитованная электролаборатория</li>
+            <li><i class="fas fa-check-circle"></i> Премиальные материалы и европейские бренды</li>
+            <li><i class="fas fa-check-circle"></i> 3D-визуализация проекта до начала работ</li>
+        </ul>
+    </div>
+
+    <!-- Статистика с разбивкой -->
+    <div class="projects-stats">
+        <div class="big-number">>15 000</div>
+        <div class="section-title" style="font-size: 26px; margin-top: 12px;">реализованных проектов</div>
+        <div class="stats-breakdown">
+            <div class="stat-item"><div class="stat-number-small">8 500+</div><div>квартир</div></div>
+            <div class="stat-item"><div class="stat-number-small">4 200+</div><div>частных домов</div></div>
+            <div class="stat-item"><div class="stat-number-small">2 300+</div><div>коммерческих объектов</div></div>
+        </div>
+        <p style="margin-top: 24px; color: var(--text-muted);">За 10+ лет работы от Москвы до регионов</p>
+    </div>
+
+    <!-- География (Москва и МО) -->
+    <div class="map-container">
+        <div class="map-title">
+            <div class="section-title" style="font-size: 28px;">География проектов</div>
+            <div class="section-sub">Москва и Московская область</div>
+        </div>
+        <div class="map-svg">
+            <i class="fas fa-map" style="font-size: 180px; color: var(--gold); opacity: 0.3;"></i>
+            <div style="margin-top: 20px; font-size: 14px; color: var(--text-muted);">Схематическая карта Москвы и МО с маркерами объектов</div>
+        </div>
+        <div class="map-markers">
+            <span class="marker"><i class="fas fa-map-marker-alt"></i> Москва (ЦАО, САО, ЮАО...)</span>
+            <span class="marker"><i class="fas fa-map-marker-alt"></i> Красногорск</span>
+            <span class="marker"><i class="fas fa-map-marker-alt"></i> Мытищи</span>
+            <span class="marker"><i class="fas fa-map-marker-alt"></i> Одинцово</span>
+            <span class="marker"><i class="fas fa-map-marker-alt"></i> Химки</span>
+            <span class="marker"><i class="fas fa-map-marker-alt"></i> Люберцы</span>
+            <span class="marker"><i class="fas fa-map-marker-alt"></i> Балашиха</span>
+        </div>
+    </div>
+
+    <!-- Калькулятор стоимости -->
+    <div class="calculator">
+        <div class="section-title" style="font-size: 32px;">Примерный расчёт стоимости</div>
+        <div class="section-sub">Укажите параметры — получите ориентировочную цену</div>
+        
+        <div class="calc-slider">
+            <label>Площадь объекта, м² <span id="areaValue" style="color: var(--gold);">100</span></label>
+            <input type="range" id="areaSlider" min="30" max="1000" value="100" step="10">
+        </div>
+        
+        <div class="calc-type">
+            <label>Тип работ</label>
+            <select id="workType">
+                <option value="project">Только проектная документация</option>
+                <option value="electro">Электролаборатория</option>
+                <option value="full" selected>Под ключ (проект + электролаборатория + ремонт)</option>
+            </select>
+        </div>
+        
+        <div class="calc-result">
+            <div style="margin-bottom: 8px;">Ориентировочная стоимость:</div>
+            <div class="price" id="calcPrice">от 1 500 000 ₽</div>
+            <div style="font-size: 13px; color: var(--text-muted); margin-top: 12px;">* Точный расчёт после консультации со специалистом</div>
+        </div>
+    </div>
+
+    <!-- Сравнительная таблица -->
+    <div>
+        <div class="section-title">GeoPro vs обычный подрядчик</div>
+        <div class="compare-table">
+            <div class="compare-row header">
+                <div class="compare-cell">Критерий</div>
+                <div class="compare-cell">GeoPro</div>
+                <div class="compare-cell">Обычный подрядчик</div>
+            </div>
+            <div class="compare-row">
+                <div class="compare-cell">Один подрядчик на всё</div>
+                <div class="compare-cell"><i class="fas fa-check"></i> Есть</div>
+                <div class="compare-cell"><i class="fas fa-times"></i> Нет, нужно нанимать 3-5 компаний</div>
+            </div>
+            <div class="compare-row">
+                <div class="compare-cell">Собственная электролаборатория</div>
+                <div class="compare-cell"><i class="fas fa-check"></i> Аккредитованная</div>
+                <div class="compare-cell"><i class="fas fa-times"></i> Нанимают сторонние организации</div>
+            </div>
+            <div class="compare-row">
+                <div class="compare-cell">Фиксированные сроки в договоре</div>
+                <div class="compare-cell"><i class="fas fa-check"></i> С гарантией</div>
+                <div class="compare-cell"><i class="fas fa-times"></i> Часто срывают сроки</div>
+            </div>
+            <div class="compare-row">
+                <div class="compare-cell">3D-визуализация до старта</div>
+                <div class="compare-cell"><i class="fas fa-check"></i> Бесплатно</div>
+                <div class="compare-cell"><i class="fas fa-times"></i> Редко предоставляют</div>
+            </div>
+            <div class="compare-row">
+                <div class="compare-cell">Штат профессиональных инженеров</div>
+                <div class="compare-cell"><i class="fas fa-check"></i> Собственный</div>
+                <div class="compare-cell"><i class="fas fa-times"></i> Фрилансеры или аутсорс</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Этапы работ -->
+    <div>
+        <div class="section-title">Как мы работаем</div>
+        <div class="section-sub">Прозрачный процесс — предсказуемый результат</div>
+        <div class="stages-grid">
+            <div class="stage-item"><div class="stage-number">1</div><h4>Заявка</h4><p style="font-size: 14px; color: var(--text-muted);">Звонок или сообщение в мессенджер</p></div>
+            <div class="stage-item"><div class="stage-number">2</div><h4>Консультация</h4><p style="font-size: 14px; color: var(--text-muted);">Обсуждаем задачу, выезд на объект</p></div>
+            <div class="stage-item"><div class="stage-number">3</div><h4>Расчёт и договор</h4><p style="font-size: 14px; color: var(--text-muted);">Смета, сроки, фиксация в договоре</p></div>
+            <div class="stage-item"><div class="stage-number">4</div><h4>Проектирование</h4><p style="font-size: 14px; color: var(--text-muted);">Разработка документации, 3D-визуализация</p></div>
+            <div class="stage-item"><div class="stage-number">5</div><h4>Реализация</h4><p style="font-size: 14px; color: var(--text-muted);">Монтаж, электролаборатория, отделка, сдача</p></div>
+        </div>
+    </div>
+
+    <!-- Документы и сертификаты -->
+    <div>
+        <div class="section-title">Документы и сертификаты</div>
+        <div class="section-sub">Наша работа подтверждена официально</div>
+        <div class="docs-grid">
+            <div class="doc-card"><i class="fas fa-certificate"></i><h4>СРО</h4><p>Допуск к проектированию</p></div>
+            <div class="doc-card"><i class="fas fa-flask"></i><h4>Аккредитация</h4><p>Электролаборатория</p></div>
+            <div class="doc-card"><i class="fas fa-users"></i><h4>Штат инженеров</h4><p>20+ специалистов</p></div>
+            <div class="doc-card"><i class="fas fa-chart-line"></i><h4>ISO 9001</h4><p>Система качества</p></div>
+        </div>
+    </div>
+
+    <!-- Вопрос-ответ (аккордеон) -->
+    <div>
+        <div class="section-title">Часто задаваемые вопросы</div>
+        <div class="faq-item">
+            <div class="faq-question">Сколько времени занимает проектирование? <i class="fas fa-chevron-down"></i></div>
+            <div class="faq-answer">Сроки зависят от сложности объекта. В среднем: квартира — от 2 недель, дом — от 3 недель, коммерческий объект — от 1 месяца.</div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-question">Нужно ли согласование проекта? <i class="fas fa-chevron-down"></i></div>
+            <div class="faq-answer">Да, мы полностью сопровождаем прохождение экспертизы и получение всех необходимых согласований.</div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-question">Какие гарантии вы даёте? <i class="fas fa-chevron-down"></i></div>
+            <div class="faq-answer">Гарантия на все виды работ — до 5 лет. Все условия фиксируются в договоре.</div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-question">Можете сделать проект под ключ? <i class="fas fa-chevron-down"></i></div>
+            <div class="faq-answer">Да, мы берём на себя всё: от первой консультации до чистовой отделки и сдачи объекта.</div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-question">Есть ли у вас своя электролаборатория? <i class="fas fa-chevron-down"></i></div>
+            <div class="faq-answer">Да, собственная аккредитованная электролаборатория со всеми необходимыми разрешениями.</div>
+        </div>
+    </div>
+
+    <!-- Отзывы -->
+    <div>
+        <div class="section-title">Отзывы клиентов</div>
+        <div class="testimonials">
+            <div class="testimonial"><p>«Проектная документация прошла госэкспертизу идеально. Электролаборатория сделала все замеры оперативно. Рекомендую!»</p><div class="client">Алексей, девелопер</div></div>
+            <div class="testimonial"><p>«Делали ремонт и кондиционирование в офисе. Результат — как в дорогом европейском проекте. Спасибо за чистоту и сроки.»</p><div class="client">Мария, владелец бизнеса</div></div>
+            <div class="testimonial"><p>«Заказывал проект дома под ключ. Всё сделали в срок, без ошибок. Особенно порадовала электролаборатория — чёткие протоколы.»</p><div class="client">Петр, частный клиент</div></div>
+        </div>
+    </div>
+
+    <!-- Лицензии и партнёры -->
+    <div class="licenses">
+        <span class="license-item"><i class="fas fa-certificate"></i> АРМАЛА</span>
+        <span class="license-item"><i class="fas fa-shield-alt"></i> РОСКИНЕТЬ</span>
+        <span class="license-item"><i class="fas fa-building"></i> МИРКС</span>
+        <span class="license-item"><i class="fas fa-chart-line"></i> МАРКС</span>
+        <span class="license-item"><i class="fas fa-city"></i> БЕЛГОРОД</span>
+    </div>
+
+    <!-- Контактный блок -->
+    <div class="contact-section">
+        <h2 style="font-size: 32px;">Закажите проект <span class="accent-gold">без лишних формальностей</span></h2>
+        <p style="margin-top: 18px; max-width: 580px; margin-left: auto; margin-right: auto;">Позвоните нам или напишите в мессенджеры — проконсультируем и рассчитаем стоимость.</p>
+        <div class="contact-actions">
+            <a href="tel:+74959990099" class="btn-call"><i class="fas fa-phone-alt"></i> +7 (495) 999-00-99</a>
+            <a href="https://wa.me/74959990099" class="btn-messenger"><i class="fab fa-whatsapp"></i> Написать в WhatsApp</a>
+            <a href="tg://resolve?domain=geopro" class="btn-messenger"><i class="fab fa-telegram"></i> Telegram</a>
+        </div>
+        <a href="mailto:info@geopro.pro" class="email-link"><i class="far fa-envelope"></i> info@geopro.pro</a>
+        
+        <!-- Кнопка скачать презентацию -->
+        <a href="#" class="btn-download" id="downloadBtn"><i class="fas fa-download"></i> Скачать презентацию компании (PDF)</a>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div>
+            <img src="______.png" alt="GeoPro" style="height: 42px;">
+            <p style="margin-top: 16px;">© 2026 GeoPro — инжиниринг премиум-класса</p>
+        </div>
+        <div>
+            <h4 style="margin-bottom: 12px;">Услуги</h4>
+            <p>Проектная документация</p>
+            <p>Электролаборатория</p>
+            <p>Ремонт и отделка</p>
+            <p>Кондиционирование</p>
+        </div>
+        <div>
+            <h4 style="margin-bottom: 12px;">Контакты</h4>
+            <p>Москва, ул. Строителей, 15</p>
+            <p>info@geopro.pro</p>
+            <p>+7 (495) 999-00-99</p>
+        </div>
+    </footer>
+</div>
+
+<script>
+    // Аккордеон для FAQ
+    document.querySelectorAll('.faq-question').forEach(question => {
+        question.addEventListener('click', () => {
+            const item = question.parentElement;
+            item.classList.toggle('active');
+        });
+    });
+
+    // Калькулятор
+    const areaSlider = document.getElementById('areaSlider');
+    const areaValue = document.getElementById('areaValue');
+    const workType = document.getElementById('workType');
+    const calcPrice = document.getElementById('calcPrice');
+
+    function updatePrice() {
+        const area = parseInt(areaSlider.value);
+        const type = workType.value;
+        let pricePerM2 = 0;
+        switch(type) {
+            case 'project': pricePerM2 = 3000; break;
+            case 'electro': pricePerM2 = 1500; break;
+            case 'full': pricePerM2 = 15000; break;
+            default: pricePerM2 = 15000;
+        }
+        const total = area * pricePerM2;
+        const formatted = total.toLocaleString('ru-RU');
+        calcPrice.textContent = `от ${formatted} ₽`;
+    }
+
+    areaSlider.addEventListener('input', () => {
+        areaValue.textContent = areaSlider.value;
+        updatePrice();
+    });
+    workType.addEventListener('change', updatePrice);
+    updatePrice();
+
+    // Кнопка скачивания презентации (имитация)
+    document.getElementById('downloadBtn').addEventListener('click', (e) => {
+        e.preventDefault();
+        alert('Скачивание презентации: \n\nВ презентации компании вы найдёте:\n• Портфолио реализованных проектов\n• Наши сертификаты и лицензии\n• Команду и опыт\n• Примеры расчётов\n• Отзывы клиентов\n\nДемо-режим. Полная версия будет доступна после консультации.');
+    });
+</script>
+</body>
+</html>

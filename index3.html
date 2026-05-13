@@ -1,0 +1,584 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>GeoPro | Инжиниринг премиум-класса</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(135deg, #13122A 0%, #0E0D23 100%);
+            color: #F0EFF8;
+            line-height: 1.5;
+            scroll-behavior: smooth;
+        }
+
+        .container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 32px;
+        }
+
+        /* Цвета бренда */
+        :root {
+            --yellow: #FFBA00;
+            --yellow-dark: #E0A500;
+            --purple: #2B294B;
+            --purple-light: #3C3A64;
+            --purple-dark: #1F1E3A;
+            --surface: #171633;
+            --surface-light: #222145;
+            --border-glow: rgba(255, 186, 0, 0.25);
+        }
+
+        /* Типографика и акценты */
+        .accent {
+            color: var(--yellow);
+        }
+
+        /* Навигация */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 28px 0;
+            border-bottom: 1px solid rgba(255, 186, 0, 0.2);
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .logo img {
+            height: 56px;
+            width: auto;
+            object-fit: contain;
+            filter: drop-shadow(0 4px 8px rgba(0,0,0,0.3));
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 42px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #E8E6F5;
+            font-weight: 500;
+            font-size: 16px;
+            transition: color 0.2s;
+        }
+
+        .nav-links a:hover {
+            color: var(--yellow);
+        }
+
+        /* Кнопки контактов */
+        .contact-buttons {
+            display: flex;
+            gap: 12px;
+        }
+
+        .btn-call {
+            background: var(--yellow);
+            border: none;
+            padding: 12px 26px;
+            border-radius: 60px;
+            font-weight: 700;
+            color: #1A192E;
+            cursor: pointer;
+            font-size: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            transition: all 0.25s ease;
+            text-decoration: none;
+        }
+
+        .btn-call i {
+            font-size: 16px;
+        }
+
+        .btn-call:hover {
+            background: #FFCE44;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 18px rgba(255, 186, 0, 0.3);
+        }
+
+        .btn-messenger {
+            background: var(--purple-light);
+            border: 1px solid var(--yellow);
+            padding: 12px 22px;
+            border-radius: 60px;
+            font-weight: 600;
+            color: var(--yellow);
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            transition: 0.2s;
+            text-decoration: none;
+        }
+
+        .btn-messenger:hover {
+            background: var(--yellow);
+            color: #1A192E;
+            border-color: var(--yellow);
+        }
+
+        /* Hero */
+        .hero {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+            gap: 60px;
+            padding: 70px 0 90px;
+        }
+
+        .hero-content {
+            flex: 1.2;
+        }
+
+        .hero-badge {
+            font-size: 13px;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            color: var(--yellow);
+            margin-bottom: 20px;
+            font-weight: 500;
+        }
+
+        .hero h1 {
+            font-size: 56px;
+            font-weight: 800;
+            line-height: 1.2;
+            margin-bottom: 28px;
+            letter-spacing: -0.02em;
+        }
+
+        .hero h1 span {
+            color: var(--yellow);
+        }
+
+        .hero p {
+            font-size: 18px;
+            color: #C2C0DD;
+            max-width: 550px;
+            margin-bottom: 40px;
+        }
+
+        .hero-stats {
+            display: flex;
+            gap: 48px;
+            margin-top: 32px;
+        }
+
+        .stat-number {
+            font-size: 40px;
+            font-weight: 800;
+            color: var(--yellow);
+            letter-spacing: -0.01em;
+        }
+
+        .hero-image {
+            flex: 0.9;
+            background: rgba(43, 41, 75, 0.6);
+            backdrop-filter: blur(2px);
+            border-radius: 36px;
+            padding: 48px 32px;
+            text-align: center;
+            border: 1px solid rgba(255, 186, 0, 0.3);
+            box-shadow: 0 25px 40px -15px rgba(0,0,0,0.6);
+        }
+
+        .hero-image i {
+            font-size: 76px;
+            color: var(--yellow);
+            margin-bottom: 24px;
+        }
+
+        /* Секции */
+        .section-title {
+            font-size: 40px;
+            font-weight: 700;
+            margin-bottom: 16px;
+            letter-spacing: -0.01em;
+        }
+
+        .section-sub {
+            font-size: 18px;
+            color: #BAB7DB;
+            margin-bottom: 56px;
+        }
+
+        /* Карточки услуг */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 32px;
+            margin: 56px 0 80px;
+        }
+
+        .service-card {
+            background: var(--surface);
+            border-radius: 32px;
+            padding: 38px 28px;
+            border: 1px solid rgba(255, 186, 0, 0.2);
+            transition: all 0.3s ease;
+            backdrop-filter: blur(4px);
+        }
+
+        .service-card:hover {
+            transform: translateY(-8px);
+            border-color: var(--yellow);
+            box-shadow: 0 20px 32px -12px rgba(255, 186, 0, 0.15);
+            background: #1D1C3F;
+        }
+
+        .service-icon {
+            font-size: 48px;
+            color: var(--yellow);
+            margin-bottom: 28px;
+        }
+
+        .service-card h3 {
+            font-size: 26px;
+            margin-bottom: 16px;
+            font-weight: 600;
+        }
+
+        .service-card p {
+            color: #B8B5D9;
+            line-height: 1.5;
+        }
+
+        /* 5 причин */
+        .reasons-block {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 48px;
+            background: var(--purple);
+            border-radius: 48px;
+            padding: 64px 52px;
+            margin: 60px 0;
+            align-items: center;
+            border: 1px solid rgba(255, 186, 0, 0.2);
+        }
+
+        .reasons-text {
+            flex: 1;
+        }
+
+        .reasons-text h2 {
+            font-size: 36px;
+            margin-bottom: 24px;
+        }
+
+        .reasons-list {
+            flex: 1;
+            list-style: none;
+        }
+
+        .reasons-list li {
+            display: flex;
+            gap: 18px;
+            margin-bottom: 28px;
+            font-size: 17px;
+            font-weight: 500;
+        }
+
+        .reasons-list li i {
+            color: var(--yellow);
+            font-size: 24px;
+        }
+
+        /* Статистика проектов */
+        .projects-stats {
+            text-align: center;
+            background: rgba(27, 26, 51, 0.8);
+            border-radius: 44px;
+            padding: 60px 32px;
+            margin: 60px 0;
+            border: 1px solid rgba(255, 186, 0, 0.2);
+        }
+
+        .big-number {
+            font-size: 68px;
+            font-weight: 800;
+            color: var(--yellow);
+            letter-spacing: -2px;
+        }
+
+        /* Отзывы */
+        .testimonials {
+            display: flex;
+            gap: 32px;
+            flex-wrap: wrap;
+            margin: 56px 0;
+        }
+
+        .testimonial {
+            background: var(--surface);
+            border-radius: 32px;
+            padding: 36px;
+            flex: 1;
+            border: 1px solid rgba(255, 186, 0, 0.2);
+            transition: 0.2s;
+        }
+
+        .testimonial:hover {
+            border-color: var(--yellow);
+        }
+
+        .testimonial p {
+            font-style: normal;
+            font-size: 17px;
+            margin-bottom: 24px;
+            color: #D6D3F0;
+            line-height: 1.5;
+        }
+
+        .client {
+            font-weight: 700;
+            color: var(--yellow);
+            font-size: 16px;
+        }
+
+        /* Лицензии */
+        .licenses {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 52px;
+            margin: 70px 0 50px;
+            padding: 32px 0;
+            border-top: 1px solid rgba(255, 186, 0, 0.2);
+            border-bottom: 1px solid rgba(255, 186, 0, 0.2);
+        }
+
+        .license-item {
+            font-size: 20px;
+            font-weight: 500;
+            letter-spacing: 1px;
+            color: #D4D1F0;
+        }
+
+        .license-item i {
+            color: var(--yellow);
+            margin-right: 10px;
+        }
+
+        /* Контактный блок БЕЗ ФОРМ */
+        .contact-section {
+            background: var(--purple);
+            border-radius: 48px;
+            padding: 60px 48px;
+            margin: 60px 0;
+            text-align: center;
+            border: 1px solid rgba(255, 186, 0, 0.25);
+        }
+
+        .contact-actions {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 24px;
+            margin-top: 44px;
+        }
+
+        .contact-actions .btn-call, .contact-actions .btn-messenger {
+            padding: 14px 34px;
+            font-size: 18px;
+        }
+
+        .email-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            margin-top: 36px;
+            font-size: 18px;
+            color: var(--yellow);
+            text-decoration: none;
+            border-bottom: 1px dashed var(--yellow);
+            padding-bottom: 6px;
+            transition: 0.2s;
+        }
+
+        .email-link:hover {
+            color: #FFCE44;
+            border-color: #FFCE44;
+        }
+
+        footer {
+            padding: 52px 0 40px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 40px;
+            border-top: 1px solid rgba(255, 186, 0, 0.15);
+        }
+
+        @media (max-width: 850px) {
+            .container {
+                padding: 0 24px;
+            }
+            .hero h1 {
+                font-size: 42px;
+            }
+            .navbar {
+                flex-direction: column;
+            }
+            .nav-links {
+                gap: 28px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            .contact-buttons {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            .reasons-block {
+                padding: 40px 28px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <!-- Шапка с реальным логотипом -->
+    <div class="navbar">
+        <div class="logo">
+            <img src="______.png" alt="GeoPro логотип">
+        </div>
+        <ul class="nav-links">
+            <li><a href="#">Проекты</a></li>
+            <li><a href="#">Услуги</a></li>
+            <li><a href="#">Отзывы</a></li>
+            <li><a href="#">Лицензии</a></li>
+        </ul>
+        <div class="contact-buttons">
+            <a href="tel:+74959990099" class="btn-call"><i class="fas fa-phone-alt"></i> Позвонить</a>
+            <a href="https://wa.me/74959990099" class="btn-messenger"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+            <a href="tg://resolve?domain=geopro" class="btn-messenger"><i class="fab fa-telegram"></i> Telegram</a>
+        </div>
+    </div>
+
+    <!-- Hero -->
+    <div class="hero">
+        <div class="hero-content">
+            <div class="hero-badge">ПРЕМИАЛЬНЫЙ ИНЖИНИРИНГ</div>
+            <h1>Проектная документация, <span>электролаборатория</span> и ремонт</h1>
+            <p>Более 10 лет комплексные решения: от проекта до чистовой отделки. Один подрядчик — безупречный результат.</p>
+            <div class="hero-stats">
+                <div><span class="stat-number">>15 000</span><br>проектов</div>
+                <div><span class="stat-number">10 лет</span><br>экспертизы</div>
+                <div><span class="stat-number">24/7</span><br>поддержка</div>
+            </div>
+        </div>
+        <div class="hero-image">
+            <i class="fas fa-ruler-combined"></i>
+            <h3 style="margin-top: 20px; color: var(--yellow);">Проектная документация</h3>
+            <p style="margin-top: 16px;">Согласование, BIM, экспертиза</p>
+        </div>
+    </div>
+
+    <!-- Услуги -->
+    <div>
+        <div class="section-title">Наши компетенции</div>
+        <div class="section-sub">Полный цикл работ для жилой и коммерческой недвижимости</div>
+        <div class="services-grid">
+            <div class="service-card"><i class="fas fa-file-alt service-icon"></i><h3>Проектная документация</h3><p>Разработка разделов П, РД, прохождение экспертизы под ключ.</p></div>
+            <div class="service-card"><i class="fas fa-bolt service-icon"></i><h3>Электролаборатория</h3><p>Измерения, испытания, пусконаладка электроустановок до 1000В.</p></div>
+            <div class="service-card"><i class="fas fa-wind service-icon"></i><h3>Кондиционирование</h3><p>VRF-системы, чиллер-фанкойлы, мультизональные решения.</p></div>
+            <div class="service-card"><i class="fas fa-paint-roller service-icon"></i><h3>Ремонт и отделка</h3><p>От дизайн-проекта до чистовой отделки «под ключ».</p></div>
+        </div>
+    </div>
+
+    <!-- 5 причин -->
+    <div class="reasons-block">
+        <div class="reasons-text">
+            <h2>5 причин <span class="accent">выбрать GeoPro</span></h2>
+            <div style="width: 70px; height: 3px; background: var(--yellow); margin-top: 8px;"></div>
+            <p style="margin-top: 30px;">Инженерные проекты — наша экспертиза. Мы отвечаем за качество на всех этапах.</p>
+        </div>
+        <ul class="reasons-list">
+            <li><i class="fas fa-check-circle"></i> Один подрядчик: проектирование + электролаборатория + отделка</li>
+            <li><i class="fas fa-check-circle"></i> Собственная аккредитованная электролаборатория</li>
+            <li><i class="fas fa-check-circle"></i> Фиксированные сроки в договоре с гарантией</li>
+            <li><i class="fas fa-check-circle"></i> Премиальные материалы и европейские стандарты</li>
+            <li><i class="fas fa-check-circle"></i> 3D-визуализация и BIM-моделирование</li>
+        </ul>
+    </div>
+
+    <!-- Статистика -->
+    <div class="projects-stats">
+        <div class="big-number">>15 000</div>
+        <div class="section-title" style="font-size: 28px; margin-top: 12px;">успешных проектов</div>
+        <p style="margin-top: 18px; color: #C2C0DD;">Более 10 лет безупречной работы на рынке инжиниринга</p>
+    </div>
+
+    <!-- Отзывы -->
+    <div>
+        <div class="section-title">Отзывы клиентов</div>
+        <div class="testimonials">
+            <div class="testimonial"><p>«Проектная документация прошла экспертизу без замечаний. Электролаборатория предоставила все протоколы. Очень довольны комплексным подходом.»</p><div class="client">Алексей, застройщик</div></div>
+            <div class="testimonial"><p>«Ремонт офиса и монтаж кондиционирования — всё сделали в срок. Качество отделки премиальное. Отдельное спасибо за чистоту на объекте.»</p><div class="client">Мария, владелец бизнеса</div></div>
+            <div class="testimonial"><p>«Заказывал проект дома под ключ. Результат превзошёл ожидания: документация, электрика, отделка — всё идеально. Рекомендую.»</p><div class="client">Пётр, частный клиент</div></div>
+        </div>
+    </div>
+
+    <!-- Лицензии -->
+    <div class="licenses">
+        <span class="license-item"><i class="fas fa-certificate"></i> АРМАЛА</span>
+        <span class="license-item"><i class="fas fa-shield-alt"></i> РОСКИНЕТЬ</span>
+        <span class="license-item"><i class="fas fa-building"></i> МИРКС</span>
+        <span class="license-item"><i class="fas fa-chart-line"></i> МАРКС</span>
+        <span class="license-item"><i class="fas fa-city"></i> БЕЛГОРОД</span>
+    </div>
+
+    <!-- Контакты (без форм) -->
+    <div class="contact-section">
+        <h2 style="font-size: 34px;">Обсудите проект <span class="accent">без посредников</span></h2>
+        <p style="margin-top: 18px; max-width: 580px; margin-left: auto; margin-right: auto;">Позвоните или напишите — рассчитаем стоимость и проконсультируем.</p>
+        <div class="contact-actions">
+            <a href="tel:+74959990099" class="btn-call"><i class="fas fa-phone-alt"></i> +7 (495) 999-00-99</a>
+            <a href="https://wa.me/74959990099" class="btn-messenger"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+            <a href="tg://resolve?domain=geopro" class="btn-messenger"><i class="fab fa-telegram"></i> Telegram</a>
+        </div>
+        <a href="mailto:info@geopro.pro" class="email-link"><i class="far fa-envelope"></i> info@geopro.pro</a>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div>
+            <img src="______.png" alt="GeoPro" style="height: 45px;">
+            <p style="margin-top: 18px;">© 2026 GeoPro — премиальный инжиниринг</p>
+        </div>
+        <div>
+            <h4 style="margin-bottom: 14px; color: var(--yellow);">Услуги</h4>
+            <p>Проектная документация</p>
+            <p>Электролаборатория</p>
+            <p>Ремонт и отделка</p>
+            <p>Кондиционирование</p>
+        </div>
+        <div>
+            <h4 style="margin-bottom: 14px; color: var(--yellow);">Контакты</h4>
+            <p>Москва, ул. Архитекторов, 12</p>
+            <p>info@geopro.pro</p>
+            <p>+7 (495) 999-00-99</p>
+        </div>
+    </footer>
+</div>
+</body>
+</html>
