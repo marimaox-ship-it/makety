@@ -1,0 +1,954 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <title>Штукатурные работы | Бетонная Лестница мск</title>
+  <meta name="description" content="Механизированная штукатурка стен по маякам в Москве и Московской области. Цена от 250 ₽/м². Гарантия 2 года.">
+  <meta name="title" content="Штукатурные работы">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+  <meta name="format-detection" content="telephone=no">
+
+  <!-- Для локального предпросмотра. Перед загрузкой в корень сайта на Reg.ru строку base нужно удалить. -->
+  <base href="https://betonayalestnica.ru/">
+
+  <link rel="icon" type="image/x-icon" href="https://betonayalestnica.ru/favicon.ico">
+  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+  <link href="combine/895818d7f92f37f4071f83687d84881d-1596192877.css" rel="stylesheet">
+
+  <meta property="og:title" content="Штукатурные работы | Бетонная Лестница мск">
+  <meta property="og:description" content="Механизированная штукатурка стен по маякам в Москве и Московской области. Цена от 250 ₽/м². Гарантия 2 года.">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="ru_RU">
+  <meta property="og:site_name" content="Сайт компании Бетонная Лестница мск - Бетонная Лестница мск">
+
+  <!-- Yandex.Metrika counter -->
+  <script type="text/javascript">
+     (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+     m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+     (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+     ym(87401743, "init", {
+          clickmap:true,
+          trackLinks:true,
+          accurateTrackBounce:true
+     });
+  </script>
+  <noscript><div><img src="https://mc.yandex.ru/watch/87401743" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+  <!-- /Yandex.Metrika counter -->
+
+  <style>
+
+    /*
+      GitHub demo images:
+      1.webp: https://marimaox-ship-it.github.io/makety/beton-lestnicy/1.webp
+      2.webp: https://marimaox-ship-it.github.io/makety/beton-lestnicy/2.webp
+      3.webp: https://marimaox-ship-it.github.io/makety/beton-lestnicy/3.webp
+      4.webp: https://marimaox-ship-it.github.io/makety/beton-lestnicy/4.webp
+    */
+
+    /* --- Основные стили --- */
+    .plaster-hero {
+      min-height: 650px;
+      position: relative;
+      display: flex;
+      align-items: center;
+      overflow: hidden;
+      background:
+        linear-gradient(90deg, rgba(0,0,0,.74) 0%, rgba(0,0,0,.56) 46%, rgba(0,0,0,.22) 100%),
+        url("storage/app/media/featured/featured.jpg") center/cover no-repeat;
+    }
+
+    .plaster-hero__inner {
+      position: relative;
+      z-index: 2;
+      width: 100%;
+      color: #fff;
+    }
+
+    .plaster-hero__content {
+      max-width: 800px;
+      padding: 84px 0;
+    }
+
+    .plaster-hero__label {
+      display: inline-block;
+      margin-bottom: 22px;
+      padding: 9px 14px;
+      border: 1px solid rgba(255,255,255,.35);
+      background: rgba(255,255,255,.08);
+      font-size: 13px;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+    }
+
+    .plaster-hero h1 {
+      margin: 0 0 22px;
+      color: #fff;
+      font-size: 58px;
+      line-height: 1.04;
+      font-weight: 700;
+    }
+
+    .plaster-hero__text {
+      max-width: 700px;
+      margin: 0 0 30px;
+      color: rgba(255,255,255,.86);
+      font-size: 20px;
+      line-height: 1.55;
+    }
+
+    .plaster-hero__actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      align-items: center;
+      margin-bottom: 34px;
+    }
+
+    .plaster-hero__actions .btn-regular {
+      min-width: 250px;
+      min-height: 54px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0 28px;
+      text-align: center;
+      line-height: 1.2;
+    }
+
+    .plaster-max-link {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 54px;
+      padding: 0 28px;
+      border: 1px solid rgba(255,255,255,.48);
+      color: #fff;
+      font-weight: 700;
+      cursor: pointer;
+      transition: .2s ease;
+    }
+
+    .plaster-max-link:hover {
+      background: rgba(255,255,255,.14);
+      color: #fff;
+    }
+
+    /* Меньший шрифт для статов */
+    .plaster-hero__stats {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(150px, 1fr));
+      gap: 12px;
+      max-width: 720px;
+    }
+
+    .plaster-hero__stat {
+      padding: 12px 16px;
+      border: 1px solid rgba(255,255,255,.20);
+      background: rgba(0,0,0,.24);
+      color: rgba(255,255,255,.80);
+    }
+
+    .plaster-hero__stat big {
+      display: block;
+      margin-bottom: 4px;
+      color: #fff;
+      font-size: 22px;
+      line-height: 1;
+      font-weight: 700;
+    }
+    
+    .plaster-hero__stat span {
+      font-size: 13px;
+    }
+
+    .plaster-trust {
+      display: grid;
+      grid-template-columns: .95fr 1.05fr 1fr;
+      gap: 22px;
+    }
+
+    .plaster-trust-card {
+      min-height: 250px;
+      position: relative;
+      background: #fff;
+      border: 1px solid #e4e4e4;
+      box-shadow: 0 16px 34px rgba(0,0,0,.07);
+      overflow: hidden;
+    }
+
+    .plaster-trust-card::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 5px;
+      height: 100%;
+      background: #c16b2c;
+    }
+
+    .plaster-trust-card__body {
+      padding: 32px 28px 30px 34px;
+    }
+
+    .plaster-trust-num {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 42px;
+      height: 42px;
+      margin-bottom: 22px;
+      background: #1f1f1f;
+      color: #fff;
+      font-weight: 700;
+    }
+
+    .plaster-trust-card h3 {
+      margin: 0 0 12px;
+      color: #111;
+      font-size: 25px;
+      line-height: 1.15;
+    }
+
+    .plaster-trust-card p {
+      margin: 0;
+      color: #555;
+      line-height: 1.6;
+    }
+
+    .plaster-price-panel {
+      display: grid;
+      grid-template-columns: .85fr 1.15fr;
+      gap: 28px;
+      align-items: stretch;
+    }
+
+    .plaster-price-main {
+      padding: 36px 32px;
+      background: #fff;
+      border: 1px solid #e4e4e4;
+      border-top: 6px solid #c16b2c;
+      box-shadow: 0 16px 34px rgba(0,0,0,.07);
+    }
+
+    .plaster-price-main h3 {
+      margin: 0 0 14px;
+      color: #111;
+      font-size: 26px;
+      line-height: 1.18;
+    }
+
+    .plaster-price-main p {
+      margin: 0;
+      color: #555;
+      line-height: 1.6;
+    }
+
+    .plaster-price-big {
+      margin: 26px 0 16px;
+      color: #111;
+      font-weight: 700;
+    }
+
+    .plaster-price-big span {
+      display: block;
+      color: #777;
+      font-size: 15px;
+      font-weight: 400;
+      margin-bottom: 6px;
+    }
+
+    .plaster-price-big big {
+      font-size: 58px;
+      line-height: .95;
+    }
+
+    .plaster-price-factors { display: grid; gap: 12px; }
+
+    .plaster-factor {
+      display: grid;
+      grid-template-columns: 54px 1fr;
+      gap: 16px;
+      align-items: start;
+      padding: 18px 20px;
+      background: #fff;
+      border: 1px solid #e4e4e4;
+      box-shadow: 0 10px 24px rgba(0,0,0,.04);
+    }
+
+    .plaster-factor__num {
+      display: inline-flex;
+      width: 42px;
+      height: 42px;
+      align-items: center;
+      justify-content: center;
+      background: #1f1f1f;
+      color: #fff;
+      font-weight: 700;
+    }
+
+    .plaster-factor h4 {
+      margin: 0 0 4px;
+      color: #111;
+      font-size: 18px;
+    }
+
+    .plaster-factor p {
+      margin: 0;
+      color: #555;
+      line-height: 1.5;
+    }
+
+    .plaster-timeline {
+      position: relative;
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 0;
+      counter-reset: plaster-step;
+    }
+
+    .plaster-step {
+      counter-increment: plaster-step;
+      position: relative;
+      padding: 30px 22px 26px;
+      background: #fff;
+      border: 1px solid #e6e6e6;
+      border-right: 0;
+      min-height: 210px;
+    }
+
+    .plaster-step:last-child { border-right: 1px solid #e6e6e6; }
+
+    .plaster-step::before {
+      content: "0" counter(plaster-step);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 46px;
+      height: 46px;
+      margin-bottom: 18px;
+      background: #c16b2c;
+      color: #fff;
+      font-weight: 700;
+      font-size: 17px;
+    }
+
+    .plaster-step::after {
+      content: "";
+      position: absolute;
+      top: 52px;
+      right: -12px;
+      z-index: 2;
+      width: 24px;
+      height: 24px;
+      border-top: 1px solid #e6e6e6;
+      border-right: 1px solid #e6e6e6;
+      background: #fff;
+      transform: rotate(45deg);
+    }
+
+    .plaster-step:last-child::after { display: none; }
+
+    .plaster-step h3 { margin: 0 0 10px; font-size: 20px; color: #111; }
+    .plaster-step p { margin: 0; color: #555; line-height: 1.55; }
+
+    .plaster-method {
+      display: grid;
+      grid-template-columns: .95fr 1.05fr;
+      gap: 30px;
+      align-items: start;
+    }
+
+    .plaster-method-main {
+      padding: 34px 30px;
+      background: #fff;
+      border: 1px solid #e4e4e4;
+      border-left: 6px solid #c16b2c;
+      box-shadow: 0 16px 34px rgba(0,0,0,.06);
+    }
+
+    .plaster-method-main h3 { margin: 0 0 14px; font-size: 27px; color: #111; line-height: 1.2; }
+    .plaster-method-main p { color: #555; line-height: 1.65; }
+    .plaster-method-list { display: grid; gap: 14px; }
+
+    .plaster-method-item {
+      display: grid;
+      grid-template-columns: 48px 1fr;
+      gap: 16px;
+      padding: 20px;
+      background: #fff;
+      border: 1px solid #e4e4e4;
+    }
+
+    .plaster-method-num {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 42px;
+      height: 42px;
+      background: #1f1f1f;
+      color: #fff;
+      font-weight: 700;
+    }
+
+    .plaster-method-item h4 { margin: 0 0 5px; color: #111; font-size: 18px; }
+    .plaster-method-item p { margin: 0; color: #555; line-height: 1.5; }
+
+    /* Блок CTA с текстурой бетона */
+    .plaster-cta {
+      color: #fff;
+      background:
+        linear-gradient(90deg, rgba(0,0,0,.85), rgba(0,0,0,.65)),
+        url("https://images.unsplash.com/photo-1558618666-fcd25c85cd64?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80") center/cover no-repeat;
+      background-attachment: fixed;
+    }
+
+    .plaster-cta h2 { color: #fff; }
+
+    .plaster-cta__grid {
+      display: grid;
+      grid-template-columns: .9fr 1.1fr;
+      gap: 40px;
+      align-items: center;
+    }
+
+    .plaster-cta ul { margin: 24px 0 0; padding: 0; list-style: none; color: rgba(255,255,255,.82); }
+    .plaster-cta li { margin-bottom: 10px; }
+    .plaster-cta li::before { content: "✓"; display: inline-block; margin-right: 10px; color: #c16b2c; font-weight: 700; }
+
+    .plaster-cta__form {
+      padding: 28px;
+      background: rgba(255,255,255,.96);
+      color: #111;
+      box-shadow: 0 20px 40px rgba(0,0,0,.18);
+    }
+
+    .plaster-faq { max-width: 980px; margin: 0 auto; padding: 0; list-style: none; }
+    .plaster-faq li { margin-bottom: 14px; background: #fff; border: 1px solid #e6e6e6; padding: 22px 24px; }
+    .plaster-faq h3 { margin: 0 0 8px; font-size: 20px; color: #111; }
+    .plaster-faq p { margin: 0; color: #555; line-height: 1.55; }
+
+    /* v14: Концепция главного экрана */
+    .plaster-hero {
+      min-height: auto !important;
+      background: #f7f7f7 !important;
+      color: #111 !important;
+      overflow: hidden;
+    }
+
+    .plaster-hero::before,
+    .plaster-hero::after {
+      display: none !important;
+    }
+
+    .plaster-hero__inner {
+      color: #111 !important;
+    }
+
+    .plaster-hero__layout {
+      display: grid;
+      grid-template-columns: 0.95fr 1.05fr;
+      gap: 46px;
+      align-items: center;
+      /* Увеличенный отступ до заголовка в 2 раза (было 132px, стало 264px) */
+      padding-top: 264px;
+      padding-bottom: 108px;
+    }
+
+    .plaster-hero__content {
+      padding: 0 !important;
+      max-width: none;
+    }
+
+    .plaster-hero h1 {
+      color: #111 !important;
+      font-size: 56px;
+      line-height: 1.05;
+      margin-bottom: 24px;
+    }
+
+    .plaster-hero__text {
+      color: #444 !important;
+      max-width: 680px;
+    }
+
+    .plaster-hero__actions {
+      margin-bottom: 32px;
+    }
+
+    .plaster-hero__photo {
+      position: relative;
+      min-height: 520px;
+      background: #ddd;
+      box-shadow: 0 22px 42px rgba(0,0,0,.14);
+      overflow: hidden;
+      border: 10px solid #fff;
+    }
+
+    .plaster-hero__photo-main {
+      position: absolute;
+      inset: 0;
+      background: url("https://marimaox-ship-it.github.io/makety/beton-lestnicy/1.webp") center/cover no-repeat;
+    }
+
+    .plaster-hero__photo-card {
+      position: absolute;
+      left: 26px;
+      bottom: 26px;
+      width: 235px;
+      height: 160px;
+      border: 8px solid #fff;
+      background: url("https://marimaox-ship-it.github.io/makety/beton-lestnicy/2.webp") center/cover no-repeat;
+      box-shadow: 0 18px 32px rgba(0,0,0,.22);
+    }
+
+    .plaster-hero__stats {
+      max-width: 740px;
+    }
+
+    .plaster-hero__stat {
+      background: #fff !important;
+      border: 1px solid #e3e3e3 !important;
+      color: #555 !important;
+      box-shadow: 0 10px 24px rgba(0,0,0,.06);
+    }
+
+    .plaster-hero__stat big {
+      color: #111 !important;
+    }
+
+    .plaster-hero .plaster-max-link {
+      color: #111 !important;
+      border-color: #d0d0d0 !important;
+      background: #fff !important;
+    }
+
+    .plaster-hero .plaster-max-link:hover {
+      border-color: #c16b2c !important;
+    }
+
+    /* Блок "Что вы получаете" */
+    .plaster-object-replace {
+      display: grid;
+      grid-template-columns: .9fr 1.1fr;
+      gap: 34px;
+      align-items: stretch;
+    }
+
+    .plaster-object-card {
+      background: #fff;
+      border: 1px solid #e4e4e4;
+      box-shadow: 0 16px 34px rgba(0,0,0,.07);
+      padding: 34px 32px;
+      border-left: 6px solid #c16b2c;
+    }
+
+    .plaster-object-card h3 {
+      margin: 0 0 14px;
+      font-size: 28px;
+      line-height: 1.18;
+      color: #111;
+    }
+
+    .plaster-object-card p {
+      margin: 0 0 16px;
+      color: #555;
+      line-height: 1.65;
+    }
+
+    .plaster-object-list {
+      display: grid;
+      gap: 14px;
+    }
+
+    .plaster-object-item {
+      display: grid;
+      grid-template-columns: 48px 1fr;
+      gap: 16px;
+      padding: 20px;
+      background: #fff;
+      border: 1px solid #e4e4e4;
+    }
+
+    .plaster-object-num {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 42px;
+      height: 42px;
+      background: #1f1f1f;
+      color: #fff;
+      font-weight: 700;
+    }
+
+    .plaster-object-item h4 {
+      margin: 0 0 5px;
+      color: #111;
+      font-size: 18px;
+    }
+
+    .plaster-object-item p {
+      margin: 0;
+      color: #555;
+      line-height: 1.5;
+    }
+
+    .plaster-object-mini-photos {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+      margin-top: 22px;
+    }
+
+    .plaster-object-mini-photo {
+      height: 190px;
+      background: #ddd center/cover no-repeat;
+      border: 8px solid #fff;
+      box-shadow: 0 12px 26px rgba(0,0,0,.08);
+    }
+
+    .plaster-object-mini-photo:first-child {
+      background-image: url("https://marimaox-ship-it.github.io/makety/beton-lestnicy/3.webp");
+    }
+
+    .plaster-object-mini-photo:nth-child(2) {
+      background-image: url("https://marimaox-ship-it.github.io/makety/beton-lestnicy/4.webp");
+    }
+
+    @media (max-width: 992px) {
+      .plaster-hero__layout,
+      .plaster-object-replace,
+      .plaster-cta__grid,
+      .plaster-price-panel,
+      .plaster-method,
+      .plaster-trust {
+        grid-template-columns: 1fr;
+      }
+      .plaster-hero__layout { padding-top: 160px; }
+      .plaster-hero h1 { font-size: 42px; }
+      .plaster-timeline { grid-template-columns: 1fr; gap: 16px; }
+      .plaster-step { border-right: 1px solid #e6e6e6; }
+      .plaster-step::after { display: none; }
+      .plaster-cta ul { grid-template-columns: 1fr; }
+    }
+
+    @media (max-width: 640px) {
+      .plaster-hero__layout { padding-top: 120px; padding-bottom: 70px; }
+      .plaster-hero h1 { font-size: 34px; }
+      .plaster-hero__photo { min-height: 380px; }
+      .plaster-hero__photo-card { width: 170px; height: 118px; }
+      .plaster-object-mini-photos { grid-template-columns: 1fr; }
+    }
+    
+    .plaster-hero__photo-note { display: none !important; }
+  </style>
+</head>
+
+<body class="page-shtukaturnye-raboty">
+  <header>
+    <div class="pusher s"></div>
+    <div class="hdr container cells middle">
+      <div class="hdr-mobile-menu">
+        <div class="hdr-mobile-menu__btn" data-action="toggle-mobile-menu">
+          <i class="fas fa-bars"></i>
+        </div>
+      </div>
+      <div class="hdr-logo">
+        <a class="logo" href="index.html" title="Бетонные лестницы">
+          <img class="logo__img" src="storage/app/media/logo/logo2.png" alt="Бетонная Лестница мск">
+          <div class="logo__text"></div>
+        </a>
+      </div>
+      <div class="hdr-nav cells">
+        <a href="index.html" title="">Бетонные лестницы</a>
+        <a href="#service" title="" class="active">Штукатурка</a>
+        <a href="#prices" title="">Цены</a>
+        <a href="#works" title="">Результат</a>
+        <a href="#steps" title="">Этапы</a>
+        <a href="#measure" title="">Замер</a>
+        <a href="#faq" title="">Вопрос-ответ</a>
+      </div>
+      <div class="hdr-phone">
+        <div class="hdr-phone__title">Наш телефон</div>
+        <a class="hdr-phone__number" href="tel:+79015875079" title=""><i class="fas fa-phone" style="margin-right: .5rem;transform: scale(-1,1);"></i>+7 901 587-50-79</a>
+        <!-- Под телефоном ничего нет -->
+      </div>
+    </div>
+    <div class="pusher s"></div>
+
+    <div class="mobile-menu__swipearea" style="display: none;"></div>
+    <div class="mobile-menu" style="display: none;">
+      <div class="mobile-menu__sidebar">
+        <div class="mobile-menu__close" data-action="toggle-mobile-menu"></div>
+        <nav>
+          <div class="pusher s"></div>
+          <div class="hdr-phone">
+            <a class="hdr-phone__number" href="tel:+79015875079" title="">+7 901 587-50-79</a>
+            <div class="hdr-phone__hours">ежедневно с 9<sup>00</sup> до 20<sup>00</sup></div>
+          </div>
+          <a href="index.html" title="">Бетонные лестницы</a><hr>
+          <a href="#service" title="">Штукатурка</a><hr>
+          <a href="#prices" title="">Цены</a><hr>
+          <a href="#works" title="">Результат</a><hr>
+          <a href="#steps" title="">Этапы</a><hr>
+          <a href="#measure" title="">Замер</a><hr>
+          <a href="#faq" title="">Вопрос-ответ</a>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="plaster-hero">
+      <div class="container plaster-hero__inner">
+        <div class="plaster-hero__layout">
+          <div class="plaster-hero__content">
+            <h1>Механизированная штукатурка стен по маякам</h1>
+            <p class="plaster-hero__text">Выравниваем стены под обои, покраску, плитку и декоративные покрытия. Работаем по замеру, фиксируем смету до начала работ и даем гарантию 2 года.</p>
+            <div class="plaster-hero__actions">
+              <div class="btn-regular open-form"
+                   data-title="Заказать расчет штукатурных работ"
+                   data-subtitle="Механизированная штукатурка стен по маякам"
+                   data-subject="Заявка на штукатурные работы"
+                   data-message="Интересует расчет механизированной штукатурки стен по маякам">
+                <span>Рассчитать стоимость</span>
+              </div>
+              <a class="plaster-max-link" href="https://max.ru/" target="_blank">Написать в MAX</a>
+            </div>
+            <div class="plaster-hero__stats">
+              <div class="plaster-hero__stat"><big>от 250 ₽/м²</big><span>стоимость штукатурки стен</span></div>
+              <div class="plaster-hero__stat"><big>2 года</big><span>гарантия на выполненные работы</span></div>
+              <div class="plaster-hero__stat"><big>по маякам</big><span>ровная геометрия поверхности</span></div>
+            </div>
+          </div>
+
+          <div class="plaster-hero__photo" aria-label="Фото штукатурных работ">
+            <div class="plaster-hero__photo-main"></div>
+            <div class="plaster-hero__photo-card"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="row-white" id="service">
+      <div class="pusher l"></div>
+      <div class="container">
+        <h2 class="title-regular">Ровные стены под чистовую отделку без лишних переделок</h2>
+        <div class="pusher m"></div>
+        <p class="plaster-lead">Механизированная штукатурка стен по маякам помогает быстро подготовить помещение к следующему этапу ремонта: шпаклевке, покраске, обоям или плитке. Сначала смотрим объект, считаем объем и фиксируем смету, затем выполняем работы по понятной технологии.</p>
+        <div class="pusher l"></div>
+
+        <div class="plaster-trust">
+          <div class="plaster-trust-card"><div class="plaster-trust-card__body"><div class="plaster-trust-num">1</div><h3>Смета до начала работ</h3><p>Стоимость рассчитывается после осмотра объекта и фиксируется до старта. Если появляются дополнительные работы, они согласуются отдельно.</p></div></div>
+          <div class="plaster-trust-card"><div class="plaster-trust-card__body"><div class="plaster-trust-num">2</div><h3>Ровная геометрия по маякам</h3><p>Маяки задают плоскость стены, а механизированная подача смеси помогает получить стабильный слой на большой площади.</p></div></div>
+          <div class="plaster-trust-card"><div class="plaster-trust-card__body"><div class="plaster-trust-num">3</div><h3>Гарантия 2 года</h3><p>После сдачи работ вы получаете подготовленную поверхность под отделку и гарантию на выполненную штукатурку стен.</p></div></div>
+        </div>
+      </div>
+      <div class="pusher l"></div>
+    </section>
+
+    <section class="row-colored" id="prices">
+      <div class="pusher l"></div>
+      <div class="container">
+        <h2 class="title-regular">Стоимость штукатурки стен</h2>
+        <div class="pusher m"></div>
+        <div class="plaster-price-panel">
+          <div class="plaster-price-main">
+            <h3>Механизированная штукатурка стен по маякам</h3>
+            <p>Стартовая цена для расчета бюджета перед замером. После осмотра объекта стоимость фиксируется в смете.</p>
+            <div class="plaster-price-big"><span>стоимость работ</span><big>от 250 ₽/м²</big></div>
+            <div class="btn-regular open-form" data-title="Заказать расчет штукатурных работ" data-subtitle="Цена от 250 ₽/м²" data-subject="Заявка на расчет штукатурки стен" data-message="Интересует расчет механизированной штукатурки стен по маякам"><span>Рассчитать объект</span></div>
+          </div>
+          <div class="plaster-price-factors">
+            <div class="plaster-factor"><div class="plaster-factor__num">1</div><div><h4>Площадь стен</h4><p>Чем больше объем, тем проще рассчитать логистику, материалы и сроки выполнения работ.</p></div></div>
+            <div class="plaster-factor"><div class="plaster-factor__num">2</div><div><h4>Перепады и слой</h4><p>Неровности стен влияют на расход смеси и итоговую толщину штукатурного слоя.</p></div></div>
+            <div class="plaster-factor"><div class="plaster-factor__num">3</div><div><h4>Состояние основания</h4><p>Перед нанесением может потребоваться очистка, грунтовка или дополнительная подготовка.</p></div></div>
+            <div class="plaster-factor"><div class="plaster-factor__num">4</div><div><h4>Условия объекта</h4><p>На расчет влияют доступ к воде и электричеству, этаж, подъезд к объекту и сроки.</p></div></div>
+          </div>
+        </div>
+      </div>
+      <div class="pusher l"></div>
+    </section>
+
+    <!-- Блок "Что вы получаете" -->
+    <section class="row-white" id="works">
+      <div class="pusher l"></div>
+      <div class="container">
+        <h2 class="title-regular">Что вы получаете</h2>
+        <div class="pusher m"></div>
+        <div class="pusher l"></div>
+
+        <div class="plaster-object-replace">
+          <div class="plaster-object-card">
+            <h3>Ровная база под чистовую отделку</h3>
+            <p>Механизированная штукатурка по маякам нужна, чтобы стены стали нормальной основой для следующего этапа ремонта: шпаклевки, обоев, покраски, плитки или декоративного покрытия.</p>
+            <p>Главная ценность здесь не в красивой фотографии, а в геометрии: плоскость, углы, примыкания и стабильная толщина слоя.</p>
+            <div class="plaster-object-mini-photos">
+              <div class="plaster-object-mini-photo"></div>
+              <div class="plaster-object-mini-photo"></div>
+            </div>
+          </div>
+
+          <div class="plaster-object-list">
+            <div class="plaster-object-item">
+              <div class="plaster-object-num">1</div>
+              <div>
+                <h4>Стены готовы к следующему этапу</h4>
+                <p>После выравнивания можно переходить к шпаклевке, поклейке обоев, покраске или укладке плитки.</p>
+              </div>
+            </div>
+            <div class="plaster-object-item">
+              <div class="plaster-object-num">2</div>
+              <div>
+                <h4>Меньше риска переделок</h4>
+                <p>Осмотр основания, маяки и контроль слоя снижают риск неровностей, трещин и проблем с финишной отделкой.</p>
+              </div>
+            </div>
+            <div class="plaster-object-item">
+              <div class="plaster-object-num">3</div>
+              <div>
+                <h4>Понятная смета до старта</h4>
+                <p>Стоимость считается после замера: площадь, перепады, слой, подготовка основания и условия объекта.</p>
+              </div>
+            </div>
+            <div class="plaster-object-item">
+              <div class="plaster-object-num">4</div>
+              <div>
+                <h4>Гарантия 2 года</h4>
+                <p>На выполненные штукатурные работы предоставляется гарантия, поэтому результат не остается “на словах”.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="pusher l"></div>
+    </section>
+
+    <section class="row-colored" id="steps">
+      <div class="pusher l"></div>
+      <div class="container">
+        <h2 class="title-regular">Этапы работ</h2>
+        <div class="pusher l"></div>
+        <div class="plaster-timeline">
+          <div class="plaster-step"><h3>Заявка</h3><p>Вы оставляете заявку на сайте или звоните по телефону. Уточняем адрес, объем и удобное время.</p></div>
+          <div class="plaster-step"><h3>Замер</h3><p>Специалист осматривает стены, перепады, основание и условия выполнения работ.</p></div>
+          <div class="plaster-step"><h3>Смета</h3><p>Рассчитываем стоимость, материалы, объем и сроки до начала работ.</p></div>
+          <div class="plaster-step"><h3>Работы</h3><p>Готовим основание, выставляем маяки, наносим смесь и выводим плоскость.</p></div>
+          <div class="plaster-step"><h3>Сдача</h3><p>Проверяем качество, фиксируем результат и передаем объект под дальнейшую отделку.</p></div>
+        </div>
+      </div>
+      <div class="pusher l"></div>
+    </section>
+
+    <section class="row-white" id="method">
+      <div class="pusher l"></div>
+      <div class="container">
+        <h2 class="title-regular">Механизированный способ: быстрее, ровнее, стабильнее</h2>
+        <div class="pusher m"></div>
+        <div class="plaster-method">
+          <div class="plaster-method-main">
+            <h3>Что дает машинная штукатурка</h3>
+            <p>Механизированная штукатурка - это способ выравнивания стен с использованием специализированного оборудования. Раствор подается равномерно, быстрее распределяется по поверхности и помогает получить стабильную толщину слоя на всей площади.</p>
+            <p>Такой подход особенно полезен на объектах, где важны скорость, предсказуемое качество и подготовка стен под дальнейшую отделку: шпаклевку, обои, покраску или плитку.</p>
+          </div>
+          <div class="plaster-method-list">
+            <div class="plaster-method-item"><div class="plaster-method-num">1</div><div><h4>Скорость работ</h4><p>Машинное нанесение ускоряет черновую отделку по сравнению с ручным способом на больших площадях.</p></div></div>
+            <div class="plaster-method-item"><div class="plaster-method-num">2</div><div><h4>Равномерный слой</h4><p>Смесь подается стабильно, а маяки помогают контролировать плоскость и геометрию стен.</p></div></div>
+            <div class="plaster-method-item"><div class="plaster-method-num">3</div><div><h4>Готовность под финиш</h4><p>После штукатурки стены становятся базой для следующего этапа ремонта: от шпаклевки до плитки.</p></div></div>
+            <div class="plaster-method-item"><div class="plaster-method-num">4</div><div><h4>Подбор под объект</h4><p>Состав и технология подбираются по состоянию помещения, основанию и требованиям к дальнейшей отделке.</p></div></div>
+          </div>
+        </div>
+      </div>
+      <div class="pusher l"></div>
+    </section>
+
+    <!-- Блок с формой и текстурой бетона -->
+    <section class="plaster-cta" id="measure">
+      <div class="pusher l"></div>
+      <div class="container">
+        <div class="plaster-cta__grid">
+          <div>
+            <h2 class="title-regular">Запись на бесплатный замер</h2>
+            <div class="pusher m"></div>
+            <p>Оставьте заявку, и специалист свяжется с вами, уточнит задачу и согласует удобное время для осмотра объекта.</p>
+            <ul>
+              <li>Москва и Московская область</li>
+              <li>Расчет стоимости после осмотра</li>
+              <li>Гарантия на работы 2 года</li>
+            </ul>
+          </div>
+          <div class="plaster-cta__form">
+            <form class="questions-form form-submit-2">
+              <div id="questionsForm_forms_flash"></div>
+              <div class="ftr-form__body cells align-top multiline">
+                <div>
+                  <div class="form-group">
+                    <textarea id="questionsForm_question" name="question" rows="8" cols="80" placeholder="Опишите задачу: площадь, объект, что нужно оштукатурить"></textarea>
+                  </div>
+                </div>
+                <div>
+                  <div class="form-group">
+                    <input type="text" id="questionsForm_name" name="name" class="form-control" placeholder="Ваше имя">
+                  </div>
+                  <div class="pusher s"></div>
+                  <div class="form-group">
+                    <input type="text" id="questionsForm_phone_email" name="phone_email" class="form-control" required="" placeholder="Ваш телефон или email *">
+                  </div>
+                  <div class="pusher s"></div>
+                  <div class="form-group robofilter">
+                    <div class="robofilter-field">
+                      <a href="agreement.html" title="" target="_blank">Соглашение на обработку персональных данных</a><br>
+                      Для подтверждения своего согласия на обработку ваших персональных данных в целях исполнения запроса введите в поле ниже цифру 
+                      <img src="themes/main/assets/images/filter-0-1.png" alt="" title="">
+                    </div>
+                    <div class="pusher s"></div>
+                    <div class="cells align-left">
+                      <div>
+                        <input id="questionsForm_filter" name="filter" type="text" value="" placeholder="Цифра с картинки *">
+                      </div>
+                      <div class="input-wrapper" style="margin-bottom: 0;margin-left: 1rem;">
+                        <button type="submit" class="button action">Отправить</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <input name="subject" type="hidden" value="Заявка на штукатурные работы">
+              <input name="page_title" type="hidden" value="Штукатурные работы">
+            </form>
+          </div>
+        </div>
+      </div>
+      <div class="pusher l"></div>
+    </section>
+
+    <section class="row-white" id="faq">
+      <div class="pusher l"></div>
+      <div class="container">
+        <h2 class="title-regular">Вопросы и ответы</h2>
+        <div class="pusher l"></div>
+        <ul class="plaster-faq">
+          <li><h3>Работаете ли вы по всей Москве и Московской области?</h3><p>Да, выполняем штукатурные работы по Москве и Московской области. Выезжаем на объект, делаем замеры и предлагаем решение под задачу клиента.</p></li>
+          <li><h3>Платный ли выезд замерщика?</h3><p>Нет, выезд замерщика бесплатный.</p></li>
+          <li><h3>Изменится ли стоимость в процессе?</h3><p>Смета фиксируется до начала работ. Изменения возможны только после согласования дополнительных работ с заказчиком.</p></li>
+          <li><h3>Нужно ли на объекте электричество и вода?</h3><p>Да, для выполнения работ нужен доступ к электричеству и воде.</p></li>
+          <li><h3>Какая гарантия на штукатурные работы?</h3><p>На выполненные штукатурные работы предоставляется гарантия 2 года.</p></li>
+        </ul>
+      </div>
+      <div class="pusher l"></div>
+    </section>
+  </main>
+
+  <footer><div class="pusher m"></div><div class="footer-padding ftr"><br>Коллектив «Бетонная Лестница мск» &copy; 2020. Все права защищены. <a href="privacy-policy.html" title="" style="float:right">Политика конфиденциальности.</a></div><div class="pusher m"></div></footer>
+
+  <div class="popup__thx"><div class="overlay_thx"></div><div class="popup__thx__body"><div class="pc-2">Закрыть</div><h3>Спасибо за заявку!</h3><p>Мы свяжемся с Вами в ближайшее время</p></div></div>
+
+  <script src="combine/770b8793a8fd09cd5e092bd737b54ee4-1596192593.js"></script>
+  <script src="plugins/martin/forms/assets/js/inline-errors.js"></script>
+  <script src="modules/system/assets/js/framework.combined-min.js"></script>
+  <script src="form.js"></script>
+  <link rel="stylesheet" property="stylesheet" href="modules/system/assets/css/framework.extras-min.css">
+
+  <div class="panel-wrapper"><div class="panel z-depth-2"><div class="panel-subwrapper"><div class="panel-close pc-2">Закрыть</div><form id="form-0" class="panel-form panel-slide shown form-submit"><div id="panelForm1_forms_flash"></div><h3 class="pf-title"></h3><div class="pf-subtitle"></div><div class="input-wrapper"><input type="text" name="name" id="input-name-0" placeholder="Ваше имя"><div class="pusher s"></div><div class="form-group"><input name="phone" id="input-phone-0" class="masked-phone-field" type="text" placeholder="Ваше номер" required=""></div></div><div class="input-wrapper"><input class="input-hidden-subject" name="subject" type="hidden" value=""><input class="input-hidden-message" name="message" type="hidden" value=""><input name="page_title" type="hidden" value="Штукатурные работы"><div class="robofilter"><div class="robofilter-field"><a href="agreement.html" title="" target="_blank">Соглашение на обработку персональных данных</a><br>Для подтверждения своего согласия на обработку ваших персональных данных в целях исполнения запроса введите в поле ниже цифру <img src="themes/main/assets/images/filter-0-1.png" alt="" title=""></div><input name="filter" type="text" value=""></div><button type="submit" class="button action">Жду звонка</button><div class="spinner"><div class="bounce1"></div><div class="bounce2"></div><div class="bounce3"></div></div></div></form><div class="pf-disclaimer"><a href="privacy-policy.html" title="" target="_blank">Политика конфиденциальности</a><br>Мы заботимся о Вашей конфиденциальности.<br>Ваши данные будут использоваться исключительно для связи с Вами и не будут переданы третьим лицам.</div></div></div></div>
+</body>
+</html>
