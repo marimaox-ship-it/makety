@@ -47,6 +47,7 @@
       Важно: из-за <base href="https://betonayalestnica.ru/"> используем абсолютные ссылки на GitHub Pages.
     */
 
+    /* --- Основные стили (большая часть без изменений) --- */
     .plaster-hero {
       min-height: 650px;
       position: relative;
@@ -134,6 +135,7 @@
       color: #fff;
     }
 
+    /* 2. Меньший шрифт для статов */
     .plaster-hero__stats {
       display: grid;
       grid-template-columns: repeat(3, minmax(150px, 1fr));
@@ -142,7 +144,7 @@
     }
 
     .plaster-hero__stat {
-      padding: 18px 16px;
+      padding: 12px 16px;
       border: 1px solid rgba(255,255,255,.20);
       background: rgba(0,0,0,.24);
       color: rgba(255,255,255,.80);
@@ -152,9 +154,13 @@
       display: block;
       margin-bottom: 4px;
       color: #fff;
-      font-size: 28px;
+      font-size: 22px;
       line-height: 1;
       font-weight: 700;
+    }
+    
+    .plaster-hero__stat span {
+      font-size: 13px;
     }
 
     .plaster-nav-row {
@@ -192,55 +198,6 @@
       color: #444;
       font-size: 18px;
       line-height: 1.65;
-    }
-
-    .plaster-grid-4 {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 22px;
-    }
-
-    .plaster-grid-3 {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 22px;
-    }
-
-    .plaster-card {
-      background: #fff;
-      border: 1px solid #e6e6e6;
-      box-shadow: 0 14px 30px rgba(0,0,0,.06);
-      overflow: hidden;
-    }
-
-    .plaster-card__body {
-      padding: 26px 24px;
-    }
-
-    .plaster-card h3 {
-      margin: 0 0 10px;
-      color: #111;
-      font-size: 21px;
-      line-height: 1.22;
-    }
-
-    .plaster-card p {
-      margin: 0;
-      color: #555;
-      line-height: 1.55;
-    }
-
-    .plaster-icon {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      width: 48px;
-      height: 48px;
-      margin-bottom: 18px;
-      background: #1f1f1f;
-      color: #fff;
-      font-weight: 700;
-      font-size: 18px;
     }
 
     .plaster-trust {
@@ -296,8 +253,6 @@
       color: #555;
       line-height: 1.6;
     }
-
-    .plaster-service-block { margin-top: 20px; }
 
     .plaster-price-panel {
       display: grid;
@@ -381,70 +336,6 @@
       color: #555;
       line-height: 1.5;
     }
-
-    .plaster-gallery-object {
-      margin-bottom: 30px;
-      background: #fff;
-      border: 1px solid #e4e4e4;
-      box-shadow: 0 12px 28px rgba(0,0,0,.05);
-    }
-
-    .plaster-gallery-head {
-      display: flex;
-      gap: 18px;
-      justify-content: space-between;
-      align-items: center;
-      padding: 22px 24px;
-      border-bottom: 1px solid #e9e9e9;
-    }
-
-    .plaster-gallery-head h3 {
-      margin: 0 0 4px;
-      color: #111;
-      font-size: 22px;
-    }
-
-    .plaster-gallery-head p { margin: 0; color: #666; }
-
-    .plaster-gallery-badge {
-      display: inline-block;
-      padding: 8px 12px;
-      background: #f4f4f4;
-      color: #333;
-      white-space: nowrap;
-      font-size: 14px;
-    }
-
-    .plaster-gallery-grid {
-      display: grid;
-      grid-template-columns: 1.05fr .95fr .95fr;
-      grid-template-rows: 220px 220px;
-      gap: 12px;
-      padding: 14px;
-    }
-
-    .plaster-gallery__item {
-      background: #ddd center/cover no-repeat;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .plaster-gallery__item::after {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(0deg, rgba(0,0,0,.22), transparent 60%);
-    }
-
-    .plaster-gallery__item:first-child { grid-row: span 2; background-image: url("storage/app/media/portfolio/stupeni-raboty12.jpg"); }
-    .plaster-gallery__item:nth-child(2) { background-image: url("storage/app/media/portfolio/stupeni-raboty13.jpg"); }
-    .plaster-gallery__item:nth-child(3) { background-image: url("storage/app/media/portfolio/stupeni-raboty14.jpg"); }
-    .plaster-gallery__item:nth-child(4) { background-image: url("storage/app/media/portfolio/stupeni-raboty15.jpg"); }
-    .plaster-gallery__item:nth-child(5) { background-image: url("storage/app/media/portfolio/stupeni-raboty16.jpg"); }
-
-    .plaster-gallery-more { display: none; margin-top: 18px; }
-    .plaster-gallery-more.is-open { display: block; }
-    .plaster-more-btn { width: fit-content; margin: 24px auto 0; cursor: pointer; }
 
     .plaster-timeline {
       position: relative;
@@ -541,11 +432,13 @@
     .plaster-method-item h4 { margin: 0 0 5px; color: #111; font-size: 18px; }
     .plaster-method-item p { margin: 0; color: #555; line-height: 1.5; }
 
+    /* Блок CTA с текстурой бетона */
     .plaster-cta {
       color: #fff;
       background:
-        linear-gradient(90deg, rgba(0,0,0,.80), rgba(0,0,0,.56)),
-        url("storage/app/media/featured/featured.jpg") center/cover no-repeat;
+        linear-gradient(90deg, rgba(0,0,0,.85), rgba(0,0,0,.65)),
+        url("https://images.unsplash.com/photo-1558618666-fcd25c85cd64?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80") center/cover no-repeat;
+      background-attachment: fixed;
     }
 
     .plaster-cta h2 { color: #fff; }
@@ -580,297 +473,49 @@
     .plaster-faq h3 { margin: 0 0 8px; font-size: 20px; color: #111; }
     .plaster-faq p { margin: 0; color: #555; line-height: 1.55; }
 
-    @media (max-width: 992px) {
-      .plaster-hero h1 { font-size: 42px; }
-      .plaster-hero__stats, .plaster-grid-4, .plaster-method, .plaster-price-panel, .plaster-trust, .plaster-cta__grid { grid-template-columns: 1fr; }
-      .plaster-grid-3 { grid-template-columns: repeat(2, 1fr); }
-      .plaster-gallery-grid { grid-template-columns: 1fr 1fr; }
-      .plaster-gallery__item:first-child { grid-row: span 1; }
-      .plaster-timeline { grid-template-columns: 1fr; gap: 16px; }
-      .plaster-step { border-right: 1px solid #e6e6e6; }
-      .plaster-step::after { display: none; }
-    }
-
-    @media (max-width: 640px) {
-      .plaster-hero { min-height: 560px; }
-      .plaster-hero h1 { font-size: 34px; }
-      .plaster-hero__text { font-size: 17px; }
-      .plaster-hero__stats, .plaster-grid-4, .plaster-grid-3, .plaster-gallery-grid, .plaster-form-grid, .plaster-form-submit { grid-template-columns: 1fr; }
-      .plaster-gallery-grid { grid-template-rows: repeat(5, 210px); }
-    }
-
-
-    /* Фиксируем симметричный воздух первого экрана: сверху от хедера и снизу до края блока */
-    .plaster-hero {
-      min-height: auto;
-    }
-
-    .plaster-hero__content {
-      padding-top: 118px;
-      padding-bottom: 118px;
-    }
-
-    .plaster-cta {
-      padding-top: 96px;
-      padding-bottom: 96px;
-    }
-
-    .plaster-cta__grid {
-      display: block;
-      max-width: 980px;
-      margin: 0 auto;
-    }
-
-    .plaster-cta__intro {
-      margin-bottom: 30px;
-      max-width: 820px;
-    }
-
-    .plaster-cta__intro p {
-      max-width: 760px;
-      line-height: 1.65;
-      color: rgba(255,255,255,.86);
-    }
-
-    .plaster-cta ul {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 12px;
-      margin-top: 24px;
-    }
-
-    .plaster-cta li {
-      margin: 0;
-      padding: 16px 18px;
-      background: rgba(255,255,255,.09);
-      border: 1px solid rgba(255,255,255,.16);
-    }
-
-    .plaster-cta__form {
-      width: 100%;
-      padding: 34px;
-    }
-
-    .plaster-form-grid {
-      grid-template-columns: 1fr 1fr;
-      gap: 16px;
-    }
-
-    .plaster-form-grid textarea,
-    .plaster-form-grid input {
-      width: 100%;
-      box-sizing: border-box;
-    }
-
-    .plaster-form-grid .form-group {
-      margin-bottom: 0;
-      min-width: 0;
-    }
-
-    .plaster-form-grid textarea {
-      display: block;
-      min-height: 96px;
-    }
-
-    .plaster-form-grid .plaster-task textarea {
-      min-height: 86px;
-    }
-
-    .plaster-form-grid .plaster-comment textarea {
-      min-height: 86px;
-    }
-
-    .plaster-form-grid .robofilter-field {
-      font-size: 13px;
-      line-height: 1.45;
-      max-width: 100%;
-    }
-
-    .plaster-form-submit {
-      grid-template-columns: minmax(180px, 1fr) auto;
-      align-items: stretch;
-      gap: 14px;
-    }
-
-    .plaster-form-submit input {
-      width: 100%;
-      min-height: 44px;
-      margin: 0;
-    }
-
-    .plaster-form-submit .button {
-      min-width: 170px;
-      min-height: 44px;
-    }
-
-    @media (max-width: 992px) {
-      .plaster-cta ul {
-        grid-template-columns: 1fr;
-      }
-    }
-
-    @media (max-width: 640px) {
-      .plaster-hero__content {
-        padding-top: 84px;
-        padding-bottom: 84px;
-      }
-
-      .plaster-cta__form {
-        padding: 24px;
-      }
-    }
-
-
-    /* v5: увеличиваем верхний отступ первого экрана и возвращаем прежнюю компоновку формы замера */
-    .plaster-hero__content {
-      padding-top: 236px;
-      padding-bottom: 118px;
-    }
-
-    .plaster-cta {
-      padding-top: 0;
-      padding-bottom: 0;
-    }
-
-    .plaster-cta__grid {
-      display: grid;
-      grid-template-columns: .9fr 1.1fr;
-      gap: 40px;
-      align-items: center;
-      max-width: none;
-      margin: 0;
-    }
-
-    .plaster-cta__intro {
-      margin-bottom: 0;
-      max-width: none;
-    }
-
-    .plaster-cta__intro p {
-      max-width: none;
-    }
-
-    .plaster-cta ul {
-      display: block;
-      grid-template-columns: none;
-      gap: 0;
-      margin: 24px 0 0;
-      padding: 0;
-      list-style: none;
-    }
-
-    .plaster-cta li {
-      margin-bottom: 10px;
-      padding: 0;
-      background: transparent;
-      border: 0;
-    }
-
-    .plaster-cta__form {
-      width: auto;
-      padding: 28px;
-    }
-
-    .plaster-form-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 14px 16px;
-    }
-
-    .plaster-form-grid .plaster-full {
-      grid-column: 1 / -1;
-    }
-
-    .plaster-form-submit {
-      display: grid;
-      grid-template-columns: 1fr auto;
-      gap: 16px;
-      align-items: end;
-    }
-
-    .plaster-form-submit .button {
-      min-height: 44px;
-      margin-top: 0;
-      white-space: nowrap;
-    }
-
-    .plaster-cta__form textarea {
-      min-height: 92px;
-    }
-
-    @media (max-width: 992px) {
-      .plaster-cta__grid {
-        grid-template-columns: 1fr;
-      }
-    }
-
-    @media (max-width: 640px) {
-      .plaster-hero__content {
-        padding-top: 128px;
-        padding-bottom: 84px;
-      }
-
-      .plaster-form-grid,
-      .plaster-form-submit {
-        grid-template-columns: 1fr;
-      }
-    }
-
-  
-    /* Точечная правка хедера: логотип и MAX */
-    .hdr-logo .logo {
-      display: flex !important;
-      align-items: center !important;
-    }
-
-    .hdr-logo .logo__img {
-      transform: translateY(-6px);
-    }
-
-    .hdr-logo .logo__text {
-      transform: translateY(-6px);
-    }
-
+    /* --- Стили для хедера с иконками (пункт 1) --- */
     .hdr-phone {
       display: flex;
       flex-direction: column;
       align-items: flex-start;
     }
     
-    /* Стили для логотипа MAX под номером */
-    .max-logo-header {
+    .phone-icons-row {
+      display: flex;
+      align-items: center;
+      gap: 8px;
       margin-top: 5px;
-      display: inline-block;
-      font-size: 13px;
-      font-weight: 600;
+    }
+    
+    .icon-placeholder {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 28px;
+      height: 28px;
+      background: rgba(0,0,0,0.05);
+      border-radius: 8px;
       color: #c16b2c;
+      font-size: 14px;
+      transition: all 0.2s ease;
+    }
+    
+    .max-link-header {
+      font-size: 12px;
+      font-weight: 600;
+      text-decoration: none;
       background: rgba(193, 107, 44, 0.1);
       padding: 4px 8px;
-      border-radius: 4px;
-      text-decoration: none;
-      transition: all 0.2s ease;
-      letter-spacing: 0.5px;
-      line-height: 1;
+      border-radius: 6px;
+      color: #c16b2c;
     }
     
-    .max-logo-header:hover {
+    .max-link-header:hover {
       background: #c16b2c;
       color: #fff;
-      text-decoration: none;
     }
 
-    .hdr-phone a[href*="max.ru"] {
-      margin-top: 3px !important;
-      display: inline-block;
-      transform: translateY(0); /* убираем предыдущий сдвиг, так как теперь используем свой логотип */
-    }
-    
-    /* Скрываем старый пустой блок whatsapp-block внутри ссылки, если он мешает */
-    .hdr-phone .whatsapp-block {
-      display: none;
-    }
-  
-    /* v14: концепция при малом количестве фото */
+    /* v14: Концепция главного экрана */
     .plaster-hero {
       min-height: auto !important;
       background: #f7f7f7 !important;
@@ -968,6 +613,7 @@
       border-color: #c16b2c !important;
     }
 
+    /* Блок "Что вы получаете" */
     .plaster-object-replace {
       display: grid;
       grid-template-columns: .9fr 1.1fr;
@@ -1055,62 +701,36 @@
       background-image: url("https://marimaox-ship-it.github.io/makety/beton-lestnicy/4.webp");
     }
 
-    .plaster-cta {
-      background:
-        linear-gradient(90deg, rgba(0,0,0,.80), rgba(0,0,0,.56)),
-        url("storage/app/media/featured/featured.jpg") center/cover no-repeat !important;
-    }
 
     @media (max-width: 992px) {
       .plaster-hero__layout,
-      .plaster-object-replace {
+      .plaster-object-replace,
+      .plaster-cta__grid,
+      .plaster-price-panel,
+      .plaster-method,
+      .plaster-trust {
         grid-template-columns: 1fr;
       }
-
-      .plaster-hero__layout {
-        padding-top: 100px;
-      }
-
-      .plaster-hero h1 {
-        font-size: 42px;
-      }
+      .plaster-hero__layout { padding-top: 100px; }
+      .plaster-hero h1 { font-size: 42px; }
+      .plaster-timeline { grid-template-columns: 1fr; gap: 16px; }
+      .plaster-step { border-right: 1px solid #e6e6e6; }
+      .plaster-step::after { display: none; }
+      .plaster-cta ul { grid-template-columns: 1fr; }
     }
 
     @media (max-width: 640px) {
-      .plaster-hero__layout {
-        padding-top: 80px;
-        padding-bottom: 70px;
-      }
-
-      .plaster-hero h1 {
-        font-size: 34px;
-      }
-
-      .plaster-hero__photo {
-        min-height: 380px;
-      }
-
-      .plaster-hero__photo-card {
-        width: 170px;
-        height: 118px;
-      }
-
-      .plaster-object-mini-photos {
-        grid-template-columns: 1fr;
-      }
+      .plaster-hero__layout { padding-top: 80px; padding-bottom: 70px; }
+      .plaster-hero h1 { font-size: 34px; }
+      .plaster-hero__photo { min-height: 380px; }
+      .plaster-hero__photo-card { width: 170px; height: 118px; }
+      .plaster-object-mini-photos { grid-template-columns: 1fr; }
+      .plaster-form-grid, .plaster-form-submit { grid-template-columns: 1fr; }
+      .plaster-cta__form { padding: 24px; }
     }
-
-  
-    /* Исправление v15: возвращаем фон блока замера и убираем подпись на hero-фото */
-    .plaster-cta {
-      background:
-        linear-gradient(90deg, rgba(0,0,0,.80), rgba(0,0,0,.56)),
-        url("storage/app/media/featured/featured.jpg") center/cover no-repeat !important;
-    }
-    .plaster-hero__photo-note {
-      display: none !important;
-    }
-
+    
+    /* Убираем лишние отступы у скрытого блока */
+    .plaster-hero__photo-note { display: none !important; }
   </style>
 </head>
 
@@ -1141,10 +761,16 @@
       <div class="hdr-phone">
         <div class="hdr-phone__title">Наш телефон</div>
         <a class="hdr-phone__number" href="tel:+79015875079" title=""><i class="fas fa-phone" style="margin-right: .5rem;transform: scale(-1,1);"></i>+7 901 587-50-79</a>
-        <!-- Логотип MAX под номером телефона -->
-        <a href="https://max.ru/" target="_blank" class="max-logo-header">
-          MAX
-        </a>
+        
+        <!-- Ряд с иконками: телефон (трубка) и место под MAX -->
+        <div class="phone-icons-row">
+          <div class="icon-placeholder" title="Позвонить">
+            <i class="fas fa-phone-alt" style="font-size: 14px;"></i>
+          </div>
+          <a href="https://max.ru/" target="_blank" class="icon-placeholder max-link-header" title="MAX">
+            MAX
+          </a>
+        </div>
       </div>
     </div>
     <div class="pusher s"></div>
@@ -1243,42 +869,15 @@
       <div class="pusher l"></div>
     </section>
 
-    <!--
-    Блок портфолио временно скрыт до получения нормального набора фотографий.
-<section class="row-white" id="works">
-      <div class="pusher l"></div>
-      <div class="container">
-        <h2 class="title-regular">Наши работы</h2>
-        <div class="pusher m"></div>
-        <p class="plaster-lead">Блок рассчитан на несколько объектов: можно показать адрес или район, кратко описать задачу и добавить фотографии процесса и результата. Сейчас стоят изображения-заглушки, после получения фото заменим их на реальные штукатурные работы.</p>
-        <div class="pusher l"></div>
-        <div class="plaster-gallery-object">
-          <div class="plaster-gallery-head"><div><h3>Объект: Москва и Московская область</h3><p>Механизированная штукатурка стен по маякам. Фото будут заменены после получения материалов.</p></div><span class="plaster-gallery-badge">5 фото</span></div>
-          <div class="plaster-gallery-grid"><div class="plaster-gallery__item"></div><div class="plaster-gallery__item"></div><div class="plaster-gallery__item"></div><div class="plaster-gallery__item"></div><div class="plaster-gallery__item"></div></div>
-        </div>
-        <div class="plaster-gallery-more" id="plasterMoreWorks">
-          <div class="plaster-gallery-object">
-            <div class="plaster-gallery-head"><div><h3>Дополнительный объект</h3><p>Место для второго набора фотографий, если заказчик пришлет больше материалов.</p></div><span class="plaster-gallery-badge">5 фото</span></div>
-            <div class="plaster-gallery-grid"><div class="plaster-gallery__item"></div><div class="plaster-gallery__item"></div><div class="plaster-gallery__item"></div><div class="plaster-gallery__item"></div><div class="plaster-gallery__item"></div></div>
-          </div>
-        </div>
-        <div class="btn-regular plaster-more-btn" id="plasterMoreBtn"><span>Показать все работы</span></div>
-      </div>
-      <div class="pusher l"></div>
-    </section>
-    / Блок портфолио временно скрыт
--->
-
+    <!-- Блок "Что вы получаете" (заголовок изменен) -->
     <section class="row-white" id="works">
       <div class="pusher l"></div>
       <div class="container">
-        <h2 class="title-regular">Что получает заказчик после штукатурки</h2>
+        <h2 class="title-regular">Что вы получаете</h2>
         <div class="pusher m"></div>
-
-         <!--
         <p class="plaster-lead">Когда фотографий мало, лучше не имитировать портфолио, а показать результат работы через понятные критерии: ровность стен, подготовку под финиш и прогнозируемую смету.</p>
         <div class="pusher l"></div>
--->
+
         <div class="plaster-object-replace">
           <div class="plaster-object-card">
             <h3>Ровная база под чистовую отделку</h3>
@@ -1363,7 +962,65 @@
       <div class="pusher l"></div>
     </section>
 
-    <section class="plaster-cta" id="measure"><div class="pusher l"></div><div class="container"><div class="plaster-cta__grid"><div><h2 class="title-regular">Запись на бесплатный замер</h2><div class="pusher m"></div><p>Оставьте заявку, и специалист свяжется с вами, уточнит задачу и согласует удобное время для осмотра объекта.</p><ul><li>Москва и Московская область</li><li>Расчет стоимости после осмотра</li><li>Гарантия на работы 2 года</li></ul></div><div class="plaster-cta__form"><form class="questions-form form-submit-2"><div id="questionsForm_forms_flash"></div><div class="ftr-form__body cells align-top multiline"><div><div class="form-group"><textarea id="questionsForm_question" name="question" rows="8" cols="80" placeholder="Опишите задачу: площадь, объект, что нужно оштукатурить"></textarea></div></div><div><div class="form-group"><input type="text" id="questionsForm_name" name="name" class="form-control" placeholder="Ваше имя"></div><div class="pusher s"></div><div class="form-group"><input type="text" id="questionsForm_phone_email" name="phone_email" class="form-control" required="" placeholder="Ваш телефон или email *"></div><div class="pusher s"></div><div class="form-group robofilter"><div class="robofilter-field"><a href="agreement.html" title="" target="_blank">Соглашение на обработку персональных данных</a><br>Для подтверждения своего согласия на обработку ваших персональных данных в целях исполнения запроса введите в поле ниже цифру <img src="themes/main/assets/images/filter-0-1.png" alt="" title=""></div><div class="pusher s"></div><div class="cells align-left"><div><input id="questionsForm_filter" name="filter" type="text" value="" placeholder="Цифра с картинки *"></div><div class="input-wrapper" style="margin-bottom: 0;margin-left: 1rem;"><button type="submit" class="button action">Отправить</button></div></div></div></div></div><input name="subject" type="hidden" value="Заявка на штукатурные работы"><input name="page_title" type="hidden" value="Штукатурные работы"></form></div></div></div><div class="pusher l"></div></section>
+    <!-- Блок с формой и текстурой бетона -->
+    <section class="plaster-cta" id="measure">
+      <div class="pusher l"></div>
+      <div class="container">
+        <div class="plaster-cta__grid">
+          <div>
+            <h2 class="title-regular">Запись на бесплатный замер</h2>
+            <div class="pusher m"></div>
+            <p>Оставьте заявку, и специалист свяжется с вами, уточнит задачу и согласует удобное время для осмотра объекта.</p>
+            <ul>
+              <li>Москва и Московская область</li>
+              <li>Расчет стоимости после осмотра</li>
+              <li>Гарантия на работы 2 года</li>
+            </ul>
+          </div>
+          <div class="plaster-cta__form">
+            <form class="questions-form form-submit-2">
+              <div id="questionsForm_forms_flash"></div>
+              <div class="ftr-form__body cells align-top multiline">
+                <div>
+                  <div class="form-group">
+                    <textarea id="questionsForm_question" name="question" rows="8" cols="80" placeholder="Опишите задачу: площадь, объект, что нужно оштукатурить"></textarea>
+                  </div>
+                </div>
+                <div>
+                  <div class="form-group">
+                    <input type="text" id="questionsForm_name" name="name" class="form-control" placeholder="Ваше имя">
+                  </div>
+                  <div class="pusher s"></div>
+                  <div class="form-group">
+                    <input type="text" id="questionsForm_phone_email" name="phone_email" class="form-control" required="" placeholder="Ваш телефон или email *">
+                  </div>
+                  <div class="pusher s"></div>
+                  <div class="form-group robofilter">
+                    <div class="robofilter-field">
+                      <a href="agreement.html" title="" target="_blank">Соглашение на обработку персональных данных</a><br>
+                      Для подтверждения своего согласия на обработку ваших персональных данных в целях исполнения запроса введите в поле ниже цифру 
+                      <img src="themes/main/assets/images/filter-0-1.png" alt="" title="">
+                    </div>
+                    <div class="pusher s"></div>
+                    <div class="cells align-left">
+                      <div>
+                        <input id="questionsForm_filter" name="filter" type="text" value="" placeholder="Цифра с картинки *">
+                      </div>
+                      <div class="input-wrapper" style="margin-bottom: 0;margin-left: 1rem;">
+                        <button type="submit" class="button action">Отправить</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <input name="subject" type="hidden" value="Заявка на штукатурные работы">
+              <input name="page_title" type="hidden" value="Штукатурные работы">
+            </form>
+          </div>
+        </div>
+      </div>
+      <div class="pusher l"></div>
+    </section>
 
     <section class="row-white" id="faq">
       <div class="pusher l"></div>
@@ -1393,19 +1050,5 @@
   <link rel="stylesheet" property="stylesheet" href="modules/system/assets/css/framework.extras-min.css">
 
   <div class="panel-wrapper"><div class="panel z-depth-2"><div class="panel-subwrapper"><div class="panel-close pc-2">Закрыть</div><form id="form-0" class="panel-form panel-slide shown form-submit"><div id="panelForm1_forms_flash"></div><h3 class="pf-title"></h3><div class="pf-subtitle"></div><div class="input-wrapper"><input type="text" name="name" id="input-name-0" placeholder="Ваше имя"><div class="pusher s"></div><div class="form-group"><input name="phone" id="input-phone-0" class="masked-phone-field" type="text" placeholder="Ваше номер" required=""></div></div><div class="input-wrapper"><input class="input-hidden-subject" name="subject" type="hidden" value=""><input class="input-hidden-message" name="message" type="hidden" value=""><input name="page_title" type="hidden" value="Штукатурные работы"><div class="robofilter"><div class="robofilter-field"><a href="agreement.html" title="" target="_blank">Соглашение на обработку персональных данных</a><br>Для подтверждения своего согласия на обработку ваших персональных данных в целях исполнения запроса введите в поле ниже цифру <img src="themes/main/assets/images/filter-0-1.png" alt="" title=""></div><input name="filter" type="text" value=""></div><button type="submit" class="button action">Жду звонка</button><div class="spinner"><div class="bounce1"></div><div class="bounce2"></div><div class="bounce3"></div></div></div></form><div class="pf-disclaimer"><a href="privacy-policy.html" title="" target="_blank">Политика конфиденциальности</a><br>Мы заботимся о Вашей конфиденциальности.<br>Ваши данные будут использоваться исключительно для связи с Вами и не будут переданы третьим лицам.</div></div></div></div>
-
-  <script>
-    (function() {
-      var btn = document.getElementById('plasterMoreBtn');
-      var more = document.getElementById('plasterMoreWorks');
-      if (btn && more) {
-        btn.addEventListener('click', function() {
-          more.classList.toggle('is-open');
-          var span = btn.querySelector('span');
-          if (span) span.textContent = more.classList.contains('is-open') ? 'Скрыть дополнительные работы' : 'Показать все работы';
-        });
-      }
-    })();
-  </script>
 </body>
 </html>
