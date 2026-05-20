@@ -710,7 +710,7 @@
       display: none;
     }
 
-    /* ===== СТИЛИ ДЛЯ ИКОНКИ MAX (ПРОСТО КАРТИНКА, БЕЗ ССЫЛКИ) ===== */
+    /* ===== СТИЛИ ДЛЯ ИКОНКИ MAX (ЧЕРЕЗ CSS BACKGROUND) ===== */
     .hdr-phone {
       display: flex;
       flex-direction: column;
@@ -720,14 +720,12 @@
     /* Иконка MAX под телефоном, отступ 10px */
     .hdr-phone__max-icon {
       margin-top: 10px;
-      line-height: 0;
-    }
-    
-    .hdr-phone__max-img {
       width: 24px;
       height: 24px;
-      object-fit: contain;
-      display: block;
+      background-image: url("https://marimaox-ship-it.github.io/makety/beton-lestnicy/image-_max_.webp");
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: center;
     }
 
     /* ===== МОБИЛЬНАЯ АДАПТАЦИЯ ===== */
@@ -927,10 +925,8 @@
         <a class="hdr-phone__number" href="tel:+79015875079" title="">
           <i class="fas fa-phone" style="margin-right: .5rem;transform: scale(-1,1);"></i>+7 901 587-50-79
         </a>
-        <!-- Иконка MAX (просто картинка, клик пока никуда не ведёт) -->
-        <div class="hdr-phone__max-icon">
-          <img class="hdr-phone__max-img" src="image-_max_.webp" alt="MAX">
-        </div>
+        <!-- Иконка MAX (через CSS background, как все остальные фото) -->
+        <div class="hdr-phone__max-icon"></div>
       </div>
     </div>
     <div class="pusher s"></div>
