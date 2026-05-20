@@ -5,7 +5,8 @@
   <title>Штукатурные работы | Бетонная Лестница мск</title>
   <meta name="description" content="Механизированная штукатурка стен по маякам в Москве и Московской области. Цена от 250 ₽/м². Гарантия 2 года.">
   <meta name="title" content="Штукатурные работы">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, viewport-fit=cover">
+  <!-- Улучшенная адаптация: viewport с учетом безопасных отступов -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, viewport-fit=cover">
   <meta name="format-detection" content="telephone=no">
 
   <!-- Для локального предпросмотра. Перед загрузкой в корень сайта на Reg.ru строку base нужно удалить. -->
@@ -700,17 +701,32 @@
       .plaster-cta ul { grid-template-columns: 1fr; }
     }
 
+    /* ★★★★★ АДАПТАЦИЯ ПЕРВОГО ЭКРАНА (как у остальных блоков) + ОТСТУП ОТ ХЕДЕРА ★★★★★ */
     @media (max-width: 768px) {
-      .plaster-hero__layout {
-        padding-top: 110px;
-        padding-bottom: 60px;
+      /* 1. Основной контейнер для первого экрана: добавляем боковые отступы как у всех секций */
+      .plaster-hero .container {
+        padding-left: 20px !important;
+        padding-right: 20px !important;
+        width: 100%;
+        box-sizing: border-box;
       }
+      
+      /* 2. Увеличиваем отступ до заголовка от хедера на 20px: было ~110px, становится ~130px */
+      .plaster-hero__layout {
+        padding-top: 130px !important;   /* +20px относительно предыдущего 110px */
+        padding-bottom: 60px;
+        gap: 28px;
+      }
+      
+      /* 3. Дополнительная коррекция для очень маленьких экранов, чтобы контент не прилипал */
       .plaster-hero h1 {
         font-size: 34px;
         line-height: 1.2;
+        margin-bottom: 18px;
       }
       .plaster-hero__text {
         font-size: 16px;
+        margin-bottom: 24px;
       }
       .plaster-hero__actions {
         flex-direction: column;
@@ -720,24 +736,31 @@
       .plaster-max-link {
         width: 100%;
         min-width: auto;
+        box-sizing: border-box;
       }
+      /* Статистика — чтобы блоки не прилипали и имели воздух */
       .plaster-hero__stats {
         grid-template-columns: 1fr;
-        gap: 8px;
+        gap: 10px;
+        width: 100%;
       }
       .plaster-hero__stat {
         display: flex;
         align-items: center;
         justify-content: space-between;
         gap: 16px;
+        padding: 12px 16px;
       }
       .plaster-hero__stat big {
         margin-bottom: 0;
         font-size: 20px;
       }
+      /* Фото блок адаптируется без прилипания */
       .plaster-hero__photo {
         min-height: 320px;
         margin-top: 20px;
+        width: 100%;
+        box-sizing: border-box;
       }
       .plaster-hero__photo-card {
         width: 130px;
@@ -747,6 +770,7 @@
         border-width: 5px;
       }
       
+      /* Остальные блоки (чтобы стиль был единым) — поддержка отступов */
       .plaster-trust-card__body { padding: 24px 20px; }
       .plaster-trust-card h3 { font-size: 22px; }
       .plaster-object-card { padding: 24px 20px; }
@@ -765,12 +789,20 @@
       .plaster-faq li { padding: 16px; }
       .plaster-faq h3 { font-size: 18px; }
       
+      /* Хедер и навигация */
       .hdr .cells { flex-wrap: wrap; gap: 12px; }
       .hdr-nav { order: 3; width: 100%; justify-content: center; }
     }
 
     @media (max-width: 480px) {
-      .plaster-hero__layout { padding-top: 100px; }
+      /* дополнительная коррекция для сверхмаленьких экранов — отступ от хедера сохранен + воздух */
+      .plaster-hero__layout {
+        padding-top: 120px !important;   /* чуть меньше, но всё равно с запасом от хедера (было 100 -> стало 120) */
+      }
+      .plaster-hero .container {
+        padding-left: 16px !important;
+        padding-right: 16px !important;
+      }
       .plaster-hero h1 { font-size: 28px; }
       .plaster-hero__photo { min-height: 260px; }
       .plaster-hero__photo-card { width: 100px; height: 70px; }
@@ -843,7 +875,6 @@
             <h1>Механизированная штукатурка стен по маякам</h1>
             <p class="plaster-hero__text">Выравниваем стены под обои, покраску, плитку и декоративные покрытия. Работаем по замеру, фиксируем смету до начала работ и даем гарантию 2 года.</p>
             <div class="plaster-hero__actions">
-              <!-- НОВАЯ ЗЕЛЕНАЯ КНОПКА — ЧИСТАЯ, БЕЗ КЛАССОВ И НАСЛЕДОВАНИЙ -->
               <div class="green-btn open-form"
                    data-title="Заказать расчет штукатурных работ"
                    data-subtitle="Механизированная штукатурка стен по маякам"
@@ -908,14 +939,12 @@
       <div class="pusher l"></div>
     </section>
 
-    <!-- Блок "Что вы получаете" -->
     <section class="row-white" id="works">
       <div class="pusher l"></div>
       <div class="container">
         <h2 class="title-regular animate-on-scroll">Что вы получаете</h2>
         <div class="pusher m"></div>
         <div class="pusher l"></div>
-
         <div class="plaster-object-replace">
           <div class="plaster-object-card animate-on-scroll delay-1">
             <h3>Ровная база под чистовую отделку</h3>
@@ -926,24 +955,11 @@
               <div class="plaster-object-mini-photo"></div>
             </div>
           </div>
-
           <div class="plaster-object-list">
-            <div class="plaster-object-item animate-on-scroll delay-1">
-              <div class="plaster-object-num">1</div>
-              <div><h4>Стены готовы к следующему этапу</h4><p>После выравнивания можно переходить к дальнейшей отделке с понятной ровной основой.</p></div>
-            </div>
-            <div class="plaster-object-item animate-on-scroll delay-2">
-              <div class="plaster-object-num">2</div>
-              <div><h4>Меньше доп.работ</h4><p>Работа по маякам и контроль плоскости помогают снизить риск переделок на следующем этапе.</p></div>
-            </div>
-            <div class="plaster-object-item animate-on-scroll delay-3">
-              <div class="plaster-object-num">3</div>
-              <div><h4>Понятная смета до старта</h4><p>Стоимость считается после замера: площадь, перепады, слой, подготовка основания и условия объекта.</p></div>
-            </div>
-            <div class="plaster-object-item animate-on-scroll delay-4">
-              <div class="plaster-object-num">4</div>
-              <div><h4>Гарантия 2 года</h4><p>На выполненные штукатурные работы предоставляется гарантия 2 года.</p></div>
-            </div>
+            <div class="plaster-object-item animate-on-scroll delay-1"><div class="plaster-object-num">1</div><div><h4>Стены готовы к следующему этапу</h4><p>После выравнивания можно переходить к дальнейшей отделке с понятной ровной основой.</p></div></div>
+            <div class="plaster-object-item animate-on-scroll delay-2"><div class="plaster-object-num">2</div><div><h4>Меньше доп.работ</h4><p>Работа по маякам и контроль плоскости помогают снизить риск переделок на следующем этапе.</p></div></div>
+            <div class="plaster-object-item animate-on-scroll delay-3"><div class="plaster-object-num">3</div><div><h4>Понятная смета до старта</h4><p>Стоимость считается после замера: площадь, перепады, слой, подготовка основания и условия объекта.</p></div></div>
+            <div class="plaster-object-item animate-on-scroll delay-4"><div class="plaster-object-num">4</div><div><h4>Гарантия 2 года</h4><p>На выполненные штукатурные работы предоставляется гарантия 2 года.</p></div></div>
           </div>
         </div>
       </div>
@@ -972,92 +988,24 @@
         <h2 class="title-regular animate-on-scroll">Механизированный способ: быстрее, ровнее, стабильнее</h2>
         <div class="pusher m"></div>
         <div class="plaster-method">
-          <div class="plaster-method-main animate-on-scroll delay-1">
-            <h3>Что дает машинная штукатурка</h3>
-            <p>Механизированная штукатурка - это способ выравнивания стен с использованием специализированного оборудования. Раствор подается равномерно, быстрее распределяется по поверхности и помогает получить стабильную толщину слоя на всей площади.</p>
-            <p>Такой подход особенно полезен на объектах, где важны скорость, предсказуемое качество и подготовка стен под дальнейшую отделку: шпаклевку, обои, покраску или плитку.</p>
-          </div>
-          <div class="plaster-method-list">
-            <div class="plaster-method-item animate-on-scroll delay-1"><div class="plaster-method-num">1</div><div><h4>Скорость работ</h4><p>Машинное нанесение ускоряет черновую отделку по сравнению с ручным способом на больших площадях.</p></div></div>
-            <div class="plaster-method-item animate-on-scroll delay-2"><div class="plaster-method-num">2</div><div><h4>Равномерный слой</h4><p>Смесь подается стабильно, а маяки помогают контролировать плоскость и геометрию стен.</p></div></div>
-            <div class="plaster-method-item animate-on-scroll delay-3"><div class="plaster-method-num">3</div><div><h4>Готовность под финиш</h4><p>После штукатурки стены становятся базой для следующего этапа ремонта: от шпаклевки до плитки.</p></div></div>
-            <div class="plaster-method-item animate-on-scroll delay-4"><div class="plaster-method-num">4</div><div><h4>Подбор под объект</h4><p>Состав и технология подбираются по состоянию помещения, основанию и требованиям к дальнейшей отделке.</p></div></div>
-          </div>
+          <div class="plaster-method-main animate-on-scroll delay-1"><h3>Что дает машинная штукатурка</h3><p>Механизированная штукатурка - это способ выравнивания стен с использованием специализированного оборудования. Раствор подается равномерно, быстрее распределяется по поверхности и помогает получить стабильную толщину слоя на всей площади.</p><p>Такой подход особенно полезен на объектах, где важны скорость, предсказуемое качество и подготовка стен под дальнейшую отделку: шпаклевку, обои, покраску или плитку.</p></div>
+          <div class="plaster-method-list"><div class="plaster-method-item animate-on-scroll delay-1"><div class="plaster-method-num">1</div><div><h4>Скорость работ</h4><p>Машинное нанесение ускоряет черновую отделку по сравнению с ручным способом на больших площадях.</p></div></div><div class="plaster-method-item animate-on-scroll delay-2"><div class="plaster-method-num">2</div><div><h4>Равномерный слой</h4><p>Смесь подается стабильно, а маяки помогают контролировать плоскость и геометрию стен.</p></div></div><div class="plaster-method-item animate-on-scroll delay-3"><div class="plaster-method-num">3</div><div><h4>Готовность под финиш</h4><p>После штукатурки стены становятся базой для следующего этапа ремонта: от шпаклевки до плитки.</p></div></div><div class="plaster-method-item animate-on-scroll delay-4"><div class="plaster-method-num">4</div><div><h4>Подбор под объект</h4><p>Состав и технология подбираются по состоянию помещения, основанию и требованиям к дальнейшей отделке.</p></div></div></div>
         </div>
       </div>
       <div class="pusher l"></div>
     </section>
 
-    <!-- Блок с формой и текстурой бетона -->
     <section class="plaster-cta" id="measure">
       <div class="pusher l"></div>
       <div class="container">
-        <div class="plaster-cta__grid">
-          <div class="animate-on-scroll delay-1">
-            <h2 class="title-regular">Запись на бесплатный замер</h2>
-            <div class="pusher m"></div>
-            <p>Оставьте заявку, и специалист свяжется с вами, уточнит задачу и согласует удобное время для осмотра объекта.</p>
-            <ul>
-              <li>Москва и Московская область</li>
-              <li>Расчет стоимости после осмотра</li>
-              <li>Гарантия на работы 2 года</li>
-            </ul>
-          </div>
-          <div class="plaster-cta__form animate-on-scroll delay-2">
-            <form class="questions-form form-submit-2">
-              <div id="questionsForm_forms_flash"></div>
-              <div class="ftr-form__body cells align-top multiline">
-                <div>
-                  <div class="form-group">
-                    <textarea id="questionsForm_question" name="question" rows="8" cols="80" placeholder="Опишите задачу: площадь, объект, что нужно оштукатурить"></textarea>
-                  </div>
-                </div>
-                <div>
-                  <div class="form-group">
-                    <input type="text" id="questionsForm_name" name="name" class="form-control" placeholder="Ваше имя">
-                  </div>
-                  <div class="pusher s"></div>
-                  <div class="form-group">
-                    <input type="text" id="questionsForm_phone_email" name="phone_email" class="form-control" required="" placeholder="Ваш телефон или email *">
-                  </div>
-                  <div class="pusher s"></div>
-                  <div class="form-group robofilter">
-                    <div class="robofilter-field">
-                      <a href="agreement.html" title="" target="_blank">Соглашение на обработку персональных данных</a><br>
-                      Для подтверждения своего согласия на обработку ваших персональных данных в целях исполнения запроса введите в поле ниже цифру 
-                      <img src="themes/main/assets/images/filter-0-1.png" alt="" title="">
-                    </div>
-                    <div class="pusher s"></div>
-                    <div class="cells align-left">
-                      <div><input id="questionsForm_filter" name="filter" type="text" value="" placeholder="Цифра с картинки *"></div>
-                      <div class="input-wrapper" style="margin-bottom: 0;margin-left: 1rem;"><button type="submit" class="button action">Отправить</button></div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <input name="subject" type="hidden" value="Заявка на штукатурные работы">
-              <input name="page_title" type="hidden" value="Штукатурные работы">
-            </form>
-          </div>
-        </div>
+        <div class="plaster-cta__grid"><div class="animate-on-scroll delay-1"><h2 class="title-regular">Запись на бесплатный замер</h2><div class="pusher m"></div><p>Оставьте заявку, и специалист свяжется с вами, уточнит задачу и согласует удобное время для осмотра объекта.</p><ul><li>Москва и Московская область</li><li>Расчет стоимости после осмотра</li><li>Гарантия на работы 2 года</li></ul></div><div class="plaster-cta__form animate-on-scroll delay-2"><form class="questions-form form-submit-2"><div id="questionsForm_forms_flash"></div><div class="ftr-form__body cells align-top multiline"><div><div class="form-group"><textarea id="questionsForm_question" name="question" rows="8" cols="80" placeholder="Опишите задачу: площадь, объект, что нужно оштукатурить"></textarea></div></div><div><div class="form-group"><input type="text" id="questionsForm_name" name="name" class="form-control" placeholder="Ваше имя"></div><div class="pusher s"></div><div class="form-group"><input type="text" id="questionsForm_phone_email" name="phone_email" class="form-control" required="" placeholder="Ваш телефон или email *"></div><div class="pusher s"></div><div class="form-group robofilter"><div class="robofilter-field"><a href="agreement.html" title="" target="_blank">Соглашение на обработку персональных данных</a><br>Для подтверждения своего согласия на обработку ваших персональных данных в целях исполнения запроса введите в поле ниже цифру <img src="themes/main/assets/images/filter-0-1.png" alt="" title=""></div><div class="pusher s"></div><div class="cells align-left"><div><input id="questionsForm_filter" name="filter" type="text" value="" placeholder="Цифра с картинки *"></div><div class="input-wrapper" style="margin-bottom: 0;margin-left: 1rem;"><button type="submit" class="button action">Отправить</button></div></div></div></div></div><input name="subject" type="hidden" value="Заявка на штукатурные работы"><input name="page_title" type="hidden" value="Штукатурные работы"></form></div></div>
       </div>
       <div class="pusher l"></div>
     </section>
 
     <section class="row-white" id="faq">
       <div class="pusher l"></div>
-      <div class="container">
-        <h2 class="title-regular animate-on-scroll">Вопросы и ответы</h2>
-        <div class="pusher l"></div>
-        <ul class="plaster-faq">
-          <li class="animate-on-scroll delay-1"><h3>Работаете ли вы по всей Москве и Московской области?</h3><p>Да, выполняем штукатурные работы по Москве и Московской области. Выезжаем на объект, делаем замеры и предлагаем решение под задачу клиента.</p></li>
-          <li class="animate-on-scroll delay-2"><h3>Платный ли выезд замерщика?</h3><p>Нет, выезд замерщика бесплатный.</p></li>
-          <li class="animate-on-scroll delay-3"><h3>Изменится ли стоимость в процессе?</h3><p>Смета фиксируется до начала работ. Изменения возможны только после согласования дополнительных работ с заказчиком.</p></li>
-          <li class="animate-on-scroll delay-4"><h3>Когда можно начинать следующий этап отделки?</h3><p>После высыхания штукатурки. Срок зависит от слоя, температуры и влажности на объекте. Ориентир мастер даст после завершения работ.</p></li>
-          <li class="animate-on-scroll delay-5"><h3>Какая гарантия на штукатурные работы?</h3><p>На выполненные штукатурные работы предоставляется гарантия 2 года.</p></li>
-        </ul>
-      </div>
-      <div class="pusher l"></div>
+      <div class="container"><h2 class="title-regular animate-on-scroll">Вопросы и ответы</h2><div class="pusher l"></div><ul class="plaster-faq"><li class="animate-on-scroll delay-1"><h3>Работаете ли вы по всей Москве и Московской области?</h3><p>Да, выполняем штукатурные работы по Москве и Московской области. Выезжаем на объект, делаем замеры и предлагаем решение под задачу клиента.</p></li><li class="animate-on-scroll delay-2"><h3>Платный ли выезд замерщика?</h3><p>Нет, выезд замерщика бесплатный.</p></li><li class="animate-on-scroll delay-3"><h3>Изменится ли стоимость в процессе?</h3><p>Смета фиксируется до начала работ. Изменения возможны только после согласования дополнительных работ с заказчиком.</p></li><li class="animate-on-scroll delay-4"><h3>Когда можно начинать следующий этап отделки?</h3><p>После высыхания штукатурки. Срок зависит от слоя, температуры и влажности на объекте. Ориентир мастер даст после завершения работ.</p></li><li class="animate-on-scroll delay-5"><h3>Какая гарантия на штукатурные работы?</h3><p>На выполненные штукатурные работы предоставляется гарантия 2 года.</p></li></ul></div><div class="pusher l"></div>
     </section>
   </main>
 
