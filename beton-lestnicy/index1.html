@@ -710,40 +710,24 @@
       display: none;
     }
 
-    /* ===== СТИЛИ ДЛЯ ЗНАЧКА MAX В ХЕДЕРЕ (БЕЗ СДВИГОВ) ===== */
+    /* ===== СТИЛИ ДЛЯ ИКОНКИ MAX (ПРОСТО КАРТИНКА, БЕЗ ССЫЛКИ) ===== */
     .hdr-phone {
       display: flex;
       flex-direction: column;
       align-items: flex-end;
     }
     
-    /* MAX значок под телефоном, отступ 10px */
-    .hdr-phone__max-link {
+    /* Иконка MAX под телефоном, отступ 10px */
+    .hdr-phone__max-icon {
       margin-top: 10px;
-      display: inline-block;
       line-height: 0;
     }
     
-    /* Изображение MAX */
     .hdr-phone__max-img {
       width: 24px;
       height: 24px;
       object-fit: contain;
       display: block;
-    }
-    
-    /* Fallback на случай отсутствия изображения */
-    .hdr-phone__max-fallback {
-      display: none;
-      font-size: 10px;
-      font-weight: 700;
-      color: #c16b2c;
-      text-decoration: none;
-    }
-    
-    .hdr-phone__max-link .hdr-phone__max-img[src=""] + .hdr-phone__max-fallback,
-    .hdr-phone__max-link .hdr-phone__max-img:not([src]) + .hdr-phone__max-fallback {
-      display: inline-block;
     }
 
     /* ===== МОБИЛЬНАЯ АДАПТАЦИЯ ===== */
@@ -768,7 +752,7 @@
       .plaster-cta ul { grid-template-columns: 1fr; }
     }
 
-    /* ★★★★★ МОБИЛЬНАЯ ВЕРСИЯ (без сдвига телефона влево) ★★★★★ */
+    /* ★★★★★ МОБИЛЬНАЯ ВЕРСИЯ (без сдвига телефона) ★★★★★ */
     @media (max-width: 768px) {
       .plaster-hero .container {
         padding-left: 20px !important;
@@ -864,7 +848,7 @@
         font-size: 12px;
       }
       
-      /* Телефон остаётся справа, ничего не сдвигаем */
+      /* Телефон остаётся справа */
       .hdr-phone {
         align-items: flex-end;
       }
@@ -943,11 +927,10 @@
         <a class="hdr-phone__number" href="tel:+79015875079" title="">
           <i class="fas fa-phone" style="margin-right: .5rem;transform: scale(-1,1);"></i>+7 901 587-50-79
         </a>
-        <!-- MAX значок под телефоном, отступ 10px, ссылка на image-_max_.webp -->
-        <a class="hdr-phone__max-link" href="image-_max_.webp" title="MAX" target="_blank">
-          <img class="hdr-phone__max-img" src="image-_max_.webp" alt="MAX" onerror="this.style.display='none'; this.nextElementSibling.style.display='inline-block';">
-          <span class="hdr-phone__max-fallback">MAX</span>
-        </a>
+        <!-- Иконка MAX (просто картинка, клик пока никуда не ведёт) -->
+        <div class="hdr-phone__max-icon">
+          <img class="hdr-phone__max-img" src="image-_max_.webp" alt="MAX">
+        </div>
       </div>
     </div>
     <div class="pusher s"></div>
